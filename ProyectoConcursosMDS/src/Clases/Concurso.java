@@ -55,6 +55,7 @@ public class Concurso implements Verificacion, Serializable {
              JOptionPane.showMessageDialog(null, "Fecha de fin de concurso debe ser mayor afecha fin de concurso","Error",JOptionPane.ERROR_MESSAGE);
          return false;
          }
+         
              
            
            return true;
@@ -136,10 +137,7 @@ public class Concurso implements Verificacion, Serializable {
 
     public void setEvaluador(Evaluador evaluador) {
         this.evaluador = evaluador;
-    }
-
-   
-    
+    }    
    
 
 }
