@@ -16,6 +16,39 @@ public abstract class Persona {
    protected String cedula;
    /** @pdOid 7dbd21f7-8251-46cb-8b78-d8f974e9c172 */
    protected Fecha fechaNacimiento;
+
+    public Persona(String nombre, String cedula, Fecha fechaNacimiento) {
+        this.nombre = nombre;
+        this.cedula = cedula;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+
+    public Fecha getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(Fecha fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+   
+   
+   
    
    /** @param cedula
     * @pdOid 13d219d4-cf18-4dbc-8315-d48bd02b6035 */
