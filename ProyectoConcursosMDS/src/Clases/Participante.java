@@ -15,4 +15,9 @@ public class Participante extends Persona implements Verificacion {
    /** @pdOid c127fbdf-d03d-4d88-bb90-600bd01a1197 */
    private int anosEXperiencia;
 
+    @Override
+    public boolean verifocarDatos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

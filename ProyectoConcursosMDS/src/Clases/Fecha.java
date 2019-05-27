@@ -24,4 +24,9 @@ public class Fecha implements Escritura {
       return false;
    }
 
+    @Override
+    public String imprimir() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

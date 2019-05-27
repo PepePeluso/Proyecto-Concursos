@@ -22,4 +22,9 @@ public class Login implements Verificacion {
       return false;
    }
 
+    @Override
+    public boolean verifocarDatos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
