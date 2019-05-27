@@ -10,8 +10,7 @@ import java.util.*;
 
 /** @pdOid 70cb4cc2-157a-4a6a-9cf2-e93e964df48e */
 public class Evaluador extends Persona implements Verificacion {
-   /** @param participante
-    * @pdOid 42692641-5ce3-4339-a010-11068e6cbcc3 */
+    
    public boolean calificarParticipante(Participante participante) {
       // TODO: implement
       return false;
