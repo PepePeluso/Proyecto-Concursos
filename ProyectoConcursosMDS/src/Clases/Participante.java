@@ -66,11 +66,11 @@ public class Participante extends Persona implements Verificacion {
     
     @Override
     public boolean verificarDatos() {
-        if (!fechaNacimiento. >=18) 
+        if (!calcularEdad() >=18) 
             JOptionPane.showMessageDialog(null, "La Fecha de nacimiento no es correcta",null, JOptionPane.ERROR_MESSAGE);
             return false;
         
-        if (fechaNacimiento. -anosEXperiencia>=18) {
+        if (calcularEdad() -anosEXperiencia>=18) {
             JOptionPane.showMessageDialog(null, "La Fecha de nacimiento no es correcta",null, JOptionPane.ERROR_MESSAGE);
             return true;
         }
