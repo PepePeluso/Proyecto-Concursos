@@ -48,9 +48,29 @@ public class Fecha implements Escritura,Serializable {
     //Este método lo utiliza el método fechaCorrecta
    
    public boolean validarFecha(Fecha fecha) {
+      if(!(fecha.getAño()>=ano))
+      {    
+      return false;
       
-    return true;
-    }
+      }else if(!(fecha.getAño()==ano)){
+     
+      return true;
+      
+      }else{
+           if(!(fecha.mes>=mes)){
+               return false;
+           }else if(!(fecha.mes==mes)){
+           return true;
+           }else{
+           if(fecha.dia>=dia){
+           return true;
+           }else{
+           return false;
+           }
+           }
+      }
+       
+   }
    
     @Override
     public String imprimir() {
