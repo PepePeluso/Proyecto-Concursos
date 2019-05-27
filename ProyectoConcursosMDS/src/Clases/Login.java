@@ -26,6 +26,14 @@ public class Login implements Verificacion {
     public boolean verificarDatos() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    
+    void Test(){
+        
+        System.out.println("ESTA ES UNA PRUEBA :V");
+    }
+    
+    
 
 
 
