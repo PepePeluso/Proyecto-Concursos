@@ -41,9 +41,9 @@ public abstract class Persona {
         return fechaNacimiento;
     }
 
-    public boolean setFechaNacimiento(Fecha fechaNacimiento) {
+    public void setFechaNacimiento(Fecha fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
-        return true;
+        
     }
 
     public boolean verificarCedula(String cedula) {
