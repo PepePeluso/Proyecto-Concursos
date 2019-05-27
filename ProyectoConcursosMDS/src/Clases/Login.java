@@ -6,6 +6,8 @@ package Clases;
  * Purpose: Defines the Class Login
  ***********************************************************************/
 
+    public class Login implements Verificacion {
+
     private String usuario;
     private String contrasena;
 
