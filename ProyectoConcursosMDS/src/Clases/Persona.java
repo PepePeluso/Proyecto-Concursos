@@ -97,10 +97,12 @@ public abstract class Persona {
      * @pdOid 0436374d-6a7a-40de-8a80-7d1858d0ea24
      */
     public int calcularEdad() {
-        
-        
-        
-        return 0;
+       Calendar c = new GregorianCalendar();
+        if (((c.get(Calendar.DATE) <= fechaNacimiento.getDia() && c.get(Calendar.MONTH) <= fechaNacimiento.getMes()))) {
+            return c.get(Calendar.YEAR) - fechaNacimiento.getAño();
+        } else {
+            return (c.get(Calendar.YEAR) - fechaNacimiento.getAño()) - 1;
+        }
     }
 
 
