@@ -77,8 +77,7 @@ public class Participante extends Persona implements Verificacion,Serializable {
         }
        
         if(!verificarCedula(cedula)){
-        JOptionPane.showMessageDialog(null, "Cedula invalida",null, JOptionPane.ERROR_MESSAGE);
-        return false;
+         return false;
         }
          return true;
     }
