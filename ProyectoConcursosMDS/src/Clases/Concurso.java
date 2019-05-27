@@ -52,7 +52,7 @@ public class Concurso implements Verificacion, Serializable {
          return false;
          }
          if(!(fechaInicioConcurso.validarFecha(fechaFinConcurso))){
-             JOptionPane.showMessageDialog(null, "Fecha invalida","Error",JOptionPane.ERROR_MESSAGE);
+             JOptionPane.showMessageDialog(null, "Fecha de fin de concurso debe ser mayor afecha fin de concurso","Error",JOptionPane.ERROR_MESSAGE);
          return false;
          }
              
