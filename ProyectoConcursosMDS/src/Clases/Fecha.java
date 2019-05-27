@@ -74,7 +74,7 @@ public class Fecha implements Escritura,Serializable {
    
     @Override
     public String imprimir() {
-        return " Dia\t "+this.dia+"Mes\t "+this.mes+"Año\t "+this.ano;
+        return this.dia+"/"+this.mes+"/ "+this.ano;
     }
 
 }
