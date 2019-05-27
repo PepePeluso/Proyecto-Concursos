@@ -62,7 +62,7 @@ public class Fecha implements Escritura,Serializable {
            }else if(!(fecha.mes==mes)){
            return true;
            }else{
-           if(fecha.dia>=dia){
+           if(fecha.dia>dia){
            return true;
            }else{
            return false;
