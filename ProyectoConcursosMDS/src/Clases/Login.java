@@ -1,5 +1,7 @@
 package Clases;
 
+import javax.swing.JOptionPane;
+
 /***********************************************************************
  * Module:  Login.java
  * Author:  Diego Castillo
