@@ -67,14 +67,20 @@ public class Participante extends Persona implements Verificacion,Serializable {
     
     @Override
     public boolean verificarDatos() {
-        if (!calcularEdad() >=18) 
+        if (!(calcularEdad()>=18)) {
             JOptionPane.showMessageDialog(null, "La Fecha de nacimiento no es correcta",null, JOptionPane.ERROR_MESSAGE);
             return false;
-        
-        if (calcularEdad() -anosEXperiencia>=18) {
-            JOptionPane.showMessageDialog(null, "La Fecha de nacimiento no es correcta",null, JOptionPane.ERROR_MESSAGE);
-            return true;
         }
+        if (!((calcularEdad()-anosEXperiencia)>=15)) {
+            JOptionPane.showMessageDialog(null, "La Fecha de nacimiento no concuerda con los años de experiencia",null, JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+       
+        if(!verificarCedula(cedula)){
+        JOptionPane.showMessageDialog(null, "Cedula invalida",null, JOptionPane.ERROR_MESSAGE);
+        return false;
+        }
+         return true;
     }
 
     
