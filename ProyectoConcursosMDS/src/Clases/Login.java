@@ -6,35 +6,30 @@ package Clases;
  * Purpose: Defines the Class Login
  ***********************************************************************/
 
-import java.util.*;
+    private String usuario;
+    private String contrasena;
 
-/** @pdOid 91a316f2-e52f-44d1-a874-04b48b299173 */
-public class Login implements Verificacion {
-   /** @pdOid 8a67f3d5-969f-4ada-ae2a-3dbaf3c3a94f */
-   private String usuario;
-   /** @pdOid 41d5c3ea-7de0-4e09-b199-3076277728f0 */
-   private String contrasena;
-   
-   /** @param login
-    * @pdOid 3b46a4b6-54d3-4aa1-aa17-54e84f561f22 */
-   public boolean verificarlogin(Login login) {
-      // TODO: implement
-      return false;
-   }
+    public Login(String usuario, String contrasena) {
+        this.usuario = usuario;
+        this.contrasena = contrasena;
+    }
+
+    public boolean verificarlogin(Login login) {
+        if (usuario.equals(contrasena)){
+            JOptionPane.showMessageDialog(null, "No se pueden repetir el mismo"
+                    + "usuario y contraseña", "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else {
+            return true;
+        }
+    }
 
     @Override
     public boolean verificarDatos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (contrasena.length()<8){
+            JOptionPane.showMessageDialog(null, "La contraseña debe ser mayor a"
+                    + " 8 carácteres");
+            return false;
+        } else return true;
     }
-    
-    
-    void Test(){
-        
-        System.out.println("ESTA ES UNA PRUEBA :V");
-    }
-    
-    
-
-
-
 }
