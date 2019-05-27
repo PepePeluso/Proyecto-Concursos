@@ -28,7 +28,10 @@ public class Evaluador extends Persona implements Verificacion,Serializable {
 
     @Override
     public boolean verificarDatos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      if(!verificarCedula(cedula)){
+         return false;
+        }
+      return true;
     }
 
    

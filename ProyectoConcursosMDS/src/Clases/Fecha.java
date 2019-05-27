@@ -46,33 +46,10 @@ public class Fecha implements Escritura,Serializable {
     }
     //Método privado para comprobar si el año es bisiesto
     //Este método lo utiliza el método fechaCorrecta
-    private boolean esBisiesto() {
-        return (ano % 4 == 0 && ano % 100 != 0 || ano % 400 == 0);
-    }
+   
    public boolean validarFecha(Fecha fecha) {
       
-     //Método para comprobar si la fecha es correcta
-        boolean diaCorrecto, mesCorrecto, añoCorrecto;
-        añoCorrecto = ano > 0;
-        mesCorrecto = mes >= 1 && mes <= 12;
-        switch (mes) {
-            case 2:
-                if (esBisiesto()) {
-                    diaCorrecto = dia >= 1 && dia <= 29;
-                } else {
-                    diaCorrecto = dia >= 1 && dia <= 28;
-                }
-                break;
-            case 4:
-            case 6:
-            case 9:
-            case 11:
-                diaCorrecto = dia >= 1 && dia <= 30;
-                break;
-            default:
-                diaCorrecto = dia >= 1 && dia <= 31;
-        }
-        return diaCorrecto && mesCorrecto && añoCorrecto;
+    return true;
     }
    
     @Override
