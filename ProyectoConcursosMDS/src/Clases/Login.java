@@ -19,14 +19,32 @@ import javax.swing.JOptionPane;
         this.contrasena = contrasena;
     }
 
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
     public boolean verificarlogin(Login login) {
-        if (usuario.equals(contrasena)){
-            JOptionPane.showMessageDialog(null, "No se pueden repetir el mismo"
-                    + "usuario y contraseña", "Error", JOptionPane.ERROR_MESSAGE);
-            return false;
-        } else {
-            return true;
+        if (!usuario.equals(login.getUsuario())){
+            JOptionPane.showMessageDialog(null, "El usuario no coninside");
+             return false;
         }
+        if(!contrasena.equals(login.getContrasena())){
+        JOptionPane.showMessageDialog(null, "El contraseña incorrecta");
+        return false;
+        }
+        return true;
     }
 
     @Override
