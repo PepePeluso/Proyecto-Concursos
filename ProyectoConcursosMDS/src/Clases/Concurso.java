@@ -6,11 +6,12 @@ package Clases;
  * Purpose: Defines the Class Concurso
  ***********************************************************************/
 
+import java.io.Serializable;
 import java.util.*;
 import javax.swing.JOptionPane;
 
 /** @pdOid c6ab528e-b770-4ab0-952a-271409d1e7f5 */
-public class Concurso implements Verificacion {
+public class Concurso implements Verificacion, Serializable {
    /** @pdOid 16f37124-50a5-49a8-acec-48700e238199 */
    private int maxParticipantes;
    /** @pdOid 5ba37f67-c368-48ae-aa5c-ae5664eab6ba */
@@ -62,15 +63,18 @@ public class Concurso implements Verificacion {
     if(participante.verificarDatos()){
         for (int i = 0; i < participantes.size(); i++) {
             if(i<maxParticipantes){
-            if(participantes.get(i)){
-            
-            }
+            if(participantes.get(i).getCedula()==participante.getCedula()){
+                JOptionPane.showMessageDialog(null, "Este participante ya existe","Error",JOptionPane.ERROR_MESSAGE);
+                return false;
+                        }
                 
             }else{
                 JOptionPane.showMessageDialog(null, "No hay espacio para mas participantes","Error",JOptionPane.ERROR_MESSAGE);
             return false;
             }
         }
+        participantes.add(participante);
+        JOptionPane.showMessageDialog(null, "Participante agragado correctamente al concurso "+nombre);
         return true;
     }
     return false;
@@ -116,13 +120,15 @@ public class Concurso implements Verificacion {
         this.nombre = nombre;
     }
 
-    public Participante[] getParticipantes() {
+    public ArrayList<Participante> getParticipantes() {
         return participantes;
     }
 
-    public void setParticipantes(Participante[] participantes) {
+    public void setParticipantes(ArrayList<Participante> participantes) {
         this.participantes = participantes;
     }
+
+   
 
     public Evaluador getEvaluador() {
         return evaluador;

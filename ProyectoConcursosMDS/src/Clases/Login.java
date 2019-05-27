@@ -1,5 +1,6 @@
 package Clases;
 
+import java.io.Serializable;
 import javax.swing.JOptionPane;
 
 /***********************************************************************
@@ -8,7 +9,7 @@ import javax.swing.JOptionPane;
  * Purpose: Defines the Class Login
  ***********************************************************************/
 
-    public class Login implements Verificacion {
+    public class Login implements Verificacion,Serializable {
 
     private String usuario;
     private String contrasena;

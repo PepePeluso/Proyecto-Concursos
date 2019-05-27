@@ -6,10 +6,11 @@ package Clases;
  * Purpose: Defines the Class Evaluador
  ***********************************************************************/
 
+import java.io.Serializable;
 import java.util.*;
 
 /** @pdOid 70cb4cc2-157a-4a6a-9cf2-e93e964df48e */
-public class Evaluador extends Persona implements Verificacion {
+public class Evaluador extends Persona implements Verificacion,Serializable {
 
     public Evaluador(String nombre, String cedula, Fecha fechaNacimiento) {
         super(nombre, cedula, fechaNacimiento);
