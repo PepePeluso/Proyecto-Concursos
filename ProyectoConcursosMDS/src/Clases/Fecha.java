@@ -11,23 +11,73 @@ import java.util.*;
 
 /** @pdOid 8ce7475a-3cbd-4d8d-b67a-3a61e495972c */
 public class Fecha implements Escritura,Serializable {
-   /** @pdOid 59d3390c-5a12-4a57-be61-38d292003c1e */
    private int dia;
-   /** @pdOid 1065ce0f-94c2-4a93-8fd8-fa19e6296682 */
    private int mes;
-   /** @pdOid aa802670-585b-42e5-9aa3-f0f9e8c5b3f7 */
    private int ano;
-   
-   /** @param fecha
-    * @pdOid 7f7e3305-d24b-4315-9863-7acf344df21e */
+    //Constructor por defecto
+    public Fecha() {
+    }
+
+    //Constructor con parámetros
+    public Fecha(int dia, int mes, int año) {
+        this.dia = dia;
+        this.mes = mes;
+        this.ano = año;
+    }
+
+    //setters y getters
+    public void setDia(int d) {
+        dia = d;
+    }
+    public void setMes(int m) {
+        mes = m;
+    }
+    public void setAño(int a) {
+        ano = a;
+    }
+    public int getDia() {
+        return dia;
+    }
+    public int getMes() {
+        return mes;
+    }
+    public int getAño() {
+        return ano;
+    }
+    //Método privado para comprobar si el año es bisiesto
+    //Este método lo utiliza el método fechaCorrecta
+    private boolean esBisiesto() {
+        return (ano % 4 == 0 && ano % 100 != 0 || ano % 400 == 0);
+    }
    public boolean validarFecha(Fecha fecha) {
       
-      return false;
-   }
-
+     //Método para comprobar si la fecha es correcta
+        boolean diaCorrecto, mesCorrecto, añoCorrecto;
+        añoCorrecto = ano > 0;
+        mesCorrecto = mes >= 1 && mes <= 12;
+        switch (mes) {
+            case 2:
+                if (esBisiesto()) {
+                    diaCorrecto = dia >= 1 && dia <= 29;
+                } else {
+                    diaCorrecto = dia >= 1 && dia <= 28;
+                }
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                diaCorrecto = dia >= 1 && dia <= 30;
+                break;
+            default:
+                diaCorrecto = dia >= 1 && dia <= 31;
+        }
+        return diaCorrecto && mesCorrecto && añoCorrecto;
+    }
+   
     @Override
     public String imprimir() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return " Dia\t "+this.dia+"Mes\t "+this.mes+"Año\t "+this.ano;
     }
 
 }
