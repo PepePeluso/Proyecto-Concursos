@@ -35,8 +35,10 @@ public class Empresa implements Verificacion {
    }
 
     @Override
-    public boolean verifocarDatos() {
+    public boolean verificarDatos() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    
 
 }

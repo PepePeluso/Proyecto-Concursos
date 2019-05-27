@@ -25,11 +25,23 @@ public class Concurso implements Verificacion {
    /** @pdOid 1663b3b9-70d2-4000-9bc1-a88cc47a3740 */
    private Evaluador evaluador;
 
+    public Concurso(int maxParticipantes, int minParticipantes, Fecha fechaInicioConcurso, Fecha fechaFinConcurso, String nombre , Evaluador evaluador) {
+        this.maxParticipantes = maxParticipantes;
+        this.minParticipantes = minParticipantes;
+        this.fechaInicioConcurso = fechaInicioConcurso;
+        this.fechaFinConcurso = fechaFinConcurso;
+        this.nombre = nombre;
+        this.participantes = new Participante[maxParticipantes];
+        this.evaluador = evaluador;
+    }
+
     @Override
-    public boolean verifocarDatos() {
+    public boolean verificarDatos() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+   
+    
    
 
 }
