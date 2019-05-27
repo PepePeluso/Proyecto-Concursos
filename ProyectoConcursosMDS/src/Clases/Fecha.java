@@ -6,10 +6,11 @@ package Clases;
  * Purpose: Defines the Class Fecha
  ***********************************************************************/
 
+import java.io.Serializable;
 import java.util.*;
 
 /** @pdOid 8ce7475a-3cbd-4d8d-b67a-3a61e495972c */
-public class Fecha implements Escritura {
+public class Fecha implements Escritura,Serializable {
    /** @pdOid 59d3390c-5a12-4a57-be61-38d292003c1e */
    private int dia;
    /** @pdOid 1065ce0f-94c2-4a93-8fd8-fa19e6296682 */
