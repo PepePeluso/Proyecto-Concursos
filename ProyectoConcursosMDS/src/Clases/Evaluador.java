@@ -16,9 +16,14 @@ public class Evaluador extends Persona implements Verificacion,Serializable {
         super(nombre, cedula, fechaNacimiento);
     }
     
-   public boolean calificarParticipante(Participante participante) {
-      // TODO: implement
-      return false;
+   public ArrayList<Participante> Aprobados(ArrayList<Participante> participantes) {
+       
+       ArrayList<Participante> aprobados=new ArrayList<Participante>();
+       for (int i = 0; i < participantes.size(); i++) {
+           if(participantes.get(i).calcularEdad()<40&&participantes.get(i).getAnosEXperiencia()>=3)
+               aprobados.add(participantes.get(i));
+                      }
+      return aprobados;
    }
 
     @Override
