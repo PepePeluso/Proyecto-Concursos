@@ -7,6 +7,7 @@ package Clases;
  ***********************************************************************/
 
 import java.util.*;
+import javax.swing.JOptionPane;
 
 /** @pdOid c6ab528e-b770-4ab0-952a-271409d1e7f5 */
 public class Concurso implements Verificacion {
@@ -21,7 +22,7 @@ public class Concurso implements Verificacion {
    /** @pdOid efe49873-509e-4ddb-bde1-6c0ce718ba43 */
    private String nombre;
    /** @pdOid 0f951f90-9700-4a9e-87d3-0c641bc6de6e */
-   private Participante[] participantes;
+   private ArrayList<Participante> participantes;
    /** @pdOid 1663b3b9-70d2-4000-9bc1-a88cc47a3740 */
    private Evaluador evaluador;
 
@@ -31,13 +32,104 @@ public class Concurso implements Verificacion {
         this.fechaInicioConcurso = fechaInicioConcurso;
         this.fechaFinConcurso = fechaFinConcurso;
         this.nombre = nombre;
-        this.participantes = new Participante[maxParticipantes];
+        this.participantes = new ArrayList<Participante>();
         this.evaluador = evaluador;
     }
 
     @Override
     public boolean verificarDatos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         if(!(maxParticipantes<=60)){
+         JOptionPane.showMessageDialog(null, "El maximo  de participantes por concurso es de 60","Error",JOptionPane.ERROR_MESSAGE);
+         return false;
+         }
+         if(!(minParticipantes>5)){
+             JOptionPane.showMessageDialog(null, "El minimo de participantes po concursos es de 5","Error",JOptionPane.ERROR_MESSAGE);
+         return false;
+         }
+         if(!(maxParticipantes>minParticipantes)){
+             JOptionPane.showMessageDialog(null, "El mumero maximo de participantes debe ser mayor al minimo de participantes","Error",JOptionPane.ERROR_MESSAGE);
+         return false;
+         }
+         if(!(fechaInicioConcurso.validarFecha(fechaFinConcurso))){
+             JOptionPane.showMessageDialog(null, "Fecha invalida","Error",JOptionPane.ERROR_MESSAGE);
+         return false;
+         }
+             
+           
+           return true;
+    }
+    public boolean AgregarParticipante(Participante participante){
+    if(participante.verificarDatos()){
+        for (int i = 0; i < participantes.size(); i++) {
+            if(i<maxParticipantes){
+            if(participantes.get(i)){
+            
+            }
+                
+            }else{
+                JOptionPane.showMessageDialog(null, "No hay espacio para mas participantes","Error",JOptionPane.ERROR_MESSAGE);
+            return false;
+            }
+        }
+        return true;
+    }
+    return false;
+    }
+
+    public int getMaxParticipantes() {
+        return maxParticipantes;
+    }
+
+    public void setMaxParticipantes(int maxParticipantes) {
+        this.maxParticipantes = maxParticipantes;
+    }
+
+    public int getMinParticipantes() {
+        return minParticipantes;
+    }
+
+    public void setMinParticipantes(int minParticipantes) {
+        this.minParticipantes = minParticipantes;
+    }
+
+    public Fecha getFechaInicioConcurso() {
+        return fechaInicioConcurso;
+    }
+
+    public void setFechaInicioConcurso(Fecha fechaInicioConcurso) {
+        this.fechaInicioConcurso = fechaInicioConcurso;
+    }
+
+    public Fecha getFechaFinConcurso() {
+        return fechaFinConcurso;
+    }
+
+    public void setFechaFinConcurso(Fecha fechaFinConcurso) {
+        this.fechaFinConcurso = fechaFinConcurso;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Participante[] getParticipantes() {
+        return participantes;
+    }
+
+    public void setParticipantes(Participante[] participantes) {
+        this.participantes = participantes;
+    }
+
+    public Evaluador getEvaluador() {
+        return evaluador;
+    }
+
+    public void setEvaluador(Evaluador evaluador) {
+        this.evaluador = evaluador;
     }
 
    

@@ -20,7 +20,7 @@ public class Fecha implements Escritura {
    /** @param fecha
     * @pdOid 7f7e3305-d24b-4315-9863-7acf344df21e */
    public boolean validarFecha(Fecha fecha) {
-      // TODO: implement
+      
       return false;
    }
 
