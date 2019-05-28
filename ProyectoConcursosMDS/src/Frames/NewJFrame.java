@@ -7,6 +7,7 @@ package Frames;
 
 import Clases.*;
 import java.util.ArrayList;
+import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -150,7 +151,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jComboProfecion = new javax.swing.JComboBox<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         TablaConcursos = new javax.swing.JTable();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        dchNaciminetoParticipante = new com.toedter.calendar.JDateChooser();
         RegistrarEvaluador = new javax.swing.JFrame();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -158,7 +159,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         txtNombreEvaluador = new javax.swing.JTextField();
         txtCedulaEvaluador = new javax.swing.JTextField();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        dchNaciminetoEvaluador = new com.toedter.calendar.JDateChooser();
         LoginIngreso = new javax.swing.JFrame();
         jLabel23 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
@@ -174,7 +175,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel2.setText("Calle principal: ");
 
-        jLabel3.setText("Calle principal: ");
+        jLabel3.setText("Calle Secundaria: ");
 
         jLabel4.setText("Telefono:");
 
@@ -189,7 +190,6 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        txtContrasena.setText("jPasswordField1");
         txtContrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtContrasenaActionPerformed(evt);
@@ -524,7 +524,7 @@ public class NewJFrame extends javax.swing.JFrame {
                                 .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtAñosExperiencia1)
                                     .addComponent(jComboProfecion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(dchNaciminetoParticipante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(RegistroPostulanteLayout.createSequentialGroup()
                                 .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
@@ -552,7 +552,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel14)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dchNaciminetoParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
@@ -598,7 +598,7 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addGroup(RegistrarEvaluadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtNombreEvaluador)
                             .addComponent(txtCedulaEvaluador)
-                            .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))))
+                            .addComponent(dchNaciminetoEvaluador, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))))
                 .addContainerGap(119, Short.MAX_VALUE))
         );
         RegistrarEvaluadorLayout.setVerticalGroup(
@@ -615,7 +615,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(RegistrarEvaluadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel20)
-                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dchNaciminetoEvaluador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(jButton10)
                 .addContainerGap(51, Short.MAX_VALUE))
@@ -631,8 +631,6 @@ public class NewJFrame extends javax.swing.JFrame {
                 jButton13ActionPerformed(evt);
             }
         });
-
-        txtContraseñaLogin.setText("jPasswordField1");
 
         javax.swing.GroupLayout LoginIngresoLayout = new javax.swing.GroupLayout(LoginIngreso.getContentPane());
         LoginIngreso.getContentPane().setLayout(LoginIngresoLayout);
@@ -850,7 +848,7 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
        try {
-         Participante participante=new Participante(jComboProfecion.getSelectedItem().toString(), Integer.parseInt(txtAñosExperiencia1.getText()),txtNombreParticipante.getText(), txtCedulaParticipante.getText(),new Fecha(0, 0, 0));
+         Participante participante=new Participante(jComboProfecion.getSelectedItem().toString(), Integer.parseInt(txtAñosExperiencia1.getText()),txtNombreParticipante.getText(), txtCedulaParticipante.getText(),new Fecha(dchNaciminetoParticipante.getCalendar().get(Calendar.DAY_OF_MONTH), dchNaciminetoParticipante.getCalendar().get(Calendar.MONTH)+1, dchNaciminetoParticipante.getCalendar().get(Calendar.YEAR)));
          if(participante.verificarDatos()){
          empresa.getConcusos().get(TablaConcursos.getSelectedRow()).AgregarParticipante(participante);
                 }
@@ -952,6 +950,8 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
     private javax.swing.JTable TablaParticpantes;
     private com.toedter.calendar.JDateChooser dchFin;
     private com.toedter.calendar.JDateChooser dchInicio;
+    private com.toedter.calendar.JDateChooser dchNaciminetoEvaluador;
+    private com.toedter.calendar.JDateChooser dchNaciminetoParticipante;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -968,8 +968,6 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboParaEvaluar;
     private javax.swing.JComboBox<String> jComboProfecion;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
