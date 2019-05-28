@@ -16,6 +16,10 @@ public class Fecha implements Escritura,Serializable {
    private int ano;
     //Constructor por defecto
     public Fecha() {
+         Calendar fecha=Calendar.getInstance();
+         ano=fecha.get(Calendar.YEAR);
+         mes=(fecha.get(Calendar.MONTH)+1);
+         dia=fecha.get(Calendar.DAY_OF_MONTH)-1;
     }
 
     //Constructor con parámetros
