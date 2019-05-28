@@ -28,6 +28,9 @@ public class Empresa implements Verificacion,Serializable {
    /** @pdOid 36ab6815-c7c9-405d-abac-fbcb1b54378c */
    private Login login;
 
+    public Empresa() {
+    }
+
     public Empresa(   String nombre, int telefono, Direccion direccion, Login login) {
         this.evaluadores = new  ArrayList<Evaluador>();
         this.concusos =new ArrayList<Concurso>();
