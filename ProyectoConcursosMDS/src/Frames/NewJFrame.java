@@ -58,7 +58,7 @@ public class NewJFrame extends javax.swing.JFrame {
         TablaConcursos.setModel(modelo3);
         if(empresa!=null){
         for (int i = 0; i < empresa.getConcusos().size(); i++) {
-            modelo1.addRow(new Object[]{
+            modelo3.addRow(new Object[]{
                 empresa.getConcusos().get(i).getNombre(),
                 empresa.getConcusos().get(i).getMaxParticipantes(),
                 empresa.getConcusos().get(i).getFechaInicioConcurso().imprimir(),
@@ -76,7 +76,7 @@ public class NewJFrame extends javax.swing.JFrame {
         TablaParticpantes.setModel(modelo2);
         if(empresa!=null){
         for (int i = 0; i < empresa.getConcusos().get(numConcurso).getParticipantes().size(); i++) {
-            modelo1.addRow(new Object[]{
+            modelo2.addRow(new Object[]{
            empresa.getConcusos().get(numConcurso).getParticipantes().get(i).getNombre(),
            empresa.getConcusos().get(numConcurso).getParticipantes().get(i).getCedula(),
             empresa.getConcusos().get(numConcurso).getParticipantes().get(i).getFechaNacimiento().imprimir(),
@@ -803,7 +803,12 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-     evaluador=empresa.getEvaluadores().get(TablaEvaluadores.getSelectedRow());
+        try {
+            evaluador=empresa.getEvaluadores().get(TablaEvaluadores.getSelectedRow()); 
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Seleccione un Evaluador  de la tabla");
+        }
+       
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -865,7 +870,7 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
         modelo4=new DefaultTableModel(null,Cabecera4);
         TablaParticipantesEvaluados.setModel(modelo4);   
       for (int i = 0; i < participantes1.size(); i++) {
-              modelo1.addRow(new Object[]{
+              modelo4.addRow(new Object[]{
             participantes1.get(i).getNombre(),
             participantes1.get(i).getCedula(),
             participantes1.get(i).getFechaNacimiento().imprimir(),
