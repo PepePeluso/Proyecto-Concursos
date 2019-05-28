@@ -53,10 +53,16 @@ public class Concurso implements Verificacion, Serializable {
              JOptionPane.showMessageDialog(null, "El mumero maximo de participantes debe ser mayor al minimo de participantes","Error",JOptionPane.ERROR_MESSAGE);
          return false;
          }
-         if(!(fechaInicioConcurso.validarFecha(fechaFinConcurso))){
-             JOptionPane.showMessageDialog(null, "Fecha de fin de concurso debe ser mayor afecha fin de concurso","Error",JOptionPane.ERROR_MESSAGE);
+         if(!(fechaInicioConcurso.validarFecha(new Fecha()))){
+             JOptionPane.showMessageDialog(null, "La fecha de inicio de ser igual o mayor a la fecha de hoy","Error",JOptionPane.ERROR_MESSAGE);
          return false;
          }
+         
+         if(!(fechaFinConcurso.validarFecha(fechaInicioConcurso))){
+             JOptionPane.showMessageDialog(null, "Fecha de fin de concurso debe ser mayor a fecha de inicio del concurso","Error",JOptionPane.ERROR_MESSAGE);
+         return false;
+         }
+         
          
              
            
