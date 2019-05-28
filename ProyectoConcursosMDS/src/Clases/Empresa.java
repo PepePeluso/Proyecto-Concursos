@@ -12,6 +12,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.*;
+import javax.swing.JOptionPane;
 
 /** @pdOid d75040f2-79bf-45a8-bb4f-b311cc64ab97 */
 public class Empresa implements Verificacion,Serializable {
@@ -120,7 +121,38 @@ public class Empresa implements Verificacion,Serializable {
         return true;
                     
     }
-
+ public boolean AgregarConcurso(Concurso concurso){
+    if(concurso.verificarDatos()){
+        for (int i = 0; i < concusos.size(); i++) {
+            if(concusos.get(i).getNombre()==concurso.getNombre()){
+                JOptionPane.showMessageDialog(null, "Hay un concurso con el mismo nombre,Cambie de nombre a su concurso!","Error",JOptionPane.ERROR_MESSAGE);
+                return false;
+                 }                
+            }
+         concusos.add(concurso);
+        JOptionPane.showMessageDialog(null, "Concurso agregado correctamente");
+        return true;
+        }
+       
+    
+    return false;
+    }
+ public boolean AgregarEvaluador(Evaluador evaluador){
+    if(evaluador.verificarDatos()){
+        for (int i = 0; i < evaluadores.size(); i++) {
+            if(evaluadores.get(i).getCedula()==evaluador.getCedula()){
+                JOptionPane.showMessageDialog(null, "Ya exite este evaluador","Error",JOptionPane.ERROR_MESSAGE);
+                return false;
+                 }                
+            }
+         evaluadores.add(evaluador);
+        JOptionPane.showMessageDialog(null, "Evaluador registrado correctamente");
+        return true;
+        }
+       
+    
+    return false;
+    }
     
 
 }
