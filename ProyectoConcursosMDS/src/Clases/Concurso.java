@@ -24,6 +24,8 @@ public class Concurso implements Verificacion, Serializable {
    private String nombre;
    /** @pdOid 0f951f90-9700-4a9e-87d3-0c641bc6de6e */
    private ArrayList<Participante> participantes;
+   
+   private ArrayList<Participante> seleccionados;
    /** @pdOid 1663b3b9-70d2-4000-9bc1-a88cc47a3740 */
    private Evaluador evaluador;
 
@@ -138,6 +140,14 @@ public class Concurso implements Verificacion, Serializable {
     public void setEvaluador(Evaluador evaluador) {
         this.evaluador = evaluador;
     }    
+
+    public ArrayList<Participante> getSeleccionados() {
+        return seleccionados;
+    }
+
+    public void setSeleccionados(ArrayList<Participante> seleccionados) {
+        this.seleccionados = seleccionados;
+    }
    
 
 }

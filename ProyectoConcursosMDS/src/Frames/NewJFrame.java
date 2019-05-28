@@ -139,6 +139,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jComboProfecion = new javax.swing.JComboBox<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         TablaConcursos = new javax.swing.JTable();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         EvaluarParticipante = new javax.swing.JFrame();
         jButton11 = new javax.swing.JButton();
         jComboParaEvaluar = new javax.swing.JComboBox<>();
@@ -157,12 +158,13 @@ public class NewJFrame extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         txtNombreEvaluador = new javax.swing.JTextField();
         txtCedulaEvaluador = new javax.swing.JTextField();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
         LoginIngreso = new javax.swing.JFrame();
         jLabel23 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         txtUsuarioLogin = new javax.swing.JTextField();
-        txtContraseñaLogin = new javax.swing.JTextField();
         jButton13 = new javax.swing.JButton();
+        txtContraseñaLogin = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -297,7 +299,7 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setText("Ecojer Evaluador");
+        jButton8.setText("Escojer Evaluador");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
@@ -414,33 +416,31 @@ public class NewJFrame extends javax.swing.JFrame {
         RegistroPostulanteLayout.setHorizontalGroup(
             RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegistroPostulanteLayout.createSequentialGroup()
-                .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(RegistroPostulanteLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButton9))
                     .addGroup(RegistroPostulanteLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14)
                             .addGroup(RegistroPostulanteLayout.createSequentialGroup()
+                                .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
                                 .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel13))
-                                .addGap(50, 50, 50)
-                                .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCedulaParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtNombreParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtAñosExperiencia1)
+                                    .addComponent(jComboProfecion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(RegistroPostulanteLayout.createSequentialGroup()
+                                .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
                                 .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel16)
-                                    .addComponent(jLabel15))
-                                .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(RegistroPostulanteLayout.createSequentialGroup()
-                                        .addGap(34, 34, 34)
-                                        .addComponent(txtAñosExperiencia1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroPostulanteLayout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(jComboProfecion, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(txtNombreParticipante)
+                                    .addComponent(txtCedulaParticipante)))))
                     .addGroup(RegistroPostulanteLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -451,14 +451,16 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroPostulanteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(txtNombreParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombreParticipante))
+                .addGap(21, 21, 21)
                 .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(txtCedulaParticipante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel14)
+                .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel14)
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
@@ -510,6 +512,11 @@ public class NewJFrame extends javax.swing.JFrame {
         jScrollPane3.setViewportView(TablaParticipantesEvaluados);
 
         jButton12.setText("Eliminar Postulante");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
 
         jLabel22.setText("Evaluado deacurdo a su edad y años de experiencia");
 
@@ -527,6 +534,10 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(EvaluarParticipanteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(EvaluarParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton12)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EvaluarParticipanteLayout.createSequentialGroup()
                         .addComponent(jLabel21)
                         .addGap(18, 18, 18)
@@ -534,15 +545,8 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButton14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton11)
-                        .addGap(24, 24, 24))
-                    .addGroup(EvaluarParticipanteLayout.createSequentialGroup()
-                        .addGroup(EvaluarParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton12)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jButton11)))
+                .addGap(24, 24, 24))
         );
         EvaluarParticipanteLayout.setVerticalGroup(
             EvaluarParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -582,23 +586,20 @@ public class NewJFrame extends javax.swing.JFrame {
         RegistrarEvaluadorLayout.setHorizontalGroup(
             RegistrarEvaluadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegistrarEvaluadorLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
                 .addGroup(RegistrarEvaluadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton10)
                     .addGroup(RegistrarEvaluadorLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(RegistrarEvaluadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel20)
-                            .addGroup(RegistrarEvaluadorLayout.createSequentialGroup()
-                                .addGroup(RegistrarEvaluadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel18)
-                                    .addComponent(jLabel19))
-                                .addGap(31, 31, 31)
-                                .addGroup(RegistrarEvaluadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCedulaEvaluador, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtNombreEvaluador, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(RegistrarEvaluadorLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton10)))
-                .addContainerGap(29, Short.MAX_VALUE))
+                        .addGroup(RegistrarEvaluadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(RegistrarEvaluadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNombreEvaluador)
+                            .addComponent(txtCedulaEvaluador)
+                            .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))))
+                .addContainerGap(119, Short.MAX_VALUE))
         );
         RegistrarEvaluadorLayout.setVerticalGroup(
             RegistrarEvaluadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -607,15 +608,17 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(RegistrarEvaluadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
                     .addComponent(txtNombreEvaluador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(RegistrarEvaluadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(9, 9, 9)
+                .addGroup(RegistrarEvaluadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
                     .addComponent(txtCedulaEvaluador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel20)
-                .addGap(37, 37, 37)
+                .addGroup(RegistrarEvaluadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel20)
+                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
                 .addComponent(jButton10)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         jLabel23.setText("Usuario:");
@@ -629,6 +632,8 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        txtContraseñaLogin.setText("jPasswordField1");
+
         javax.swing.GroupLayout LoginIngresoLayout = new javax.swing.GroupLayout(LoginIngreso.getContentPane());
         LoginIngreso.getContentPane().setLayout(LoginIngresoLayout);
         LoginIngresoLayout.setHorizontalGroup(
@@ -641,10 +646,13 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addGroup(LoginIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel25)
                             .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(17, 17, 17)
                         .addGroup(LoginIngresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtContraseñaLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                            .addComponent(txtUsuarioLogin))))
+                            .addGroup(LoginIngresoLayout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(txtUsuarioLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE))
+                            .addGroup(LoginIngresoLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(txtContraseñaLogin)))))
                 .addContainerGap())
         );
         LoginIngresoLayout.setVerticalGroup(
@@ -885,11 +893,16 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
             participantes1.get(i).getProfesion()
             });
         }
+      concurso.setSeleccionados(participantes1);
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void txtContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContrasenaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtContrasenaActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton12ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -955,6 +968,8 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboParaEvaluar;
     private javax.swing.JComboBox<String> jComboProfecion;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -988,7 +1003,7 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
     private javax.swing.JTextField txtCedulaEvaluador;
     private javax.swing.JTextField txtCedulaParticipante;
     private javax.swing.JPasswordField txtContrasena;
-    private javax.swing.JTextField txtContraseñaLogin;
+    private javax.swing.JPasswordField txtContraseñaLogin;
     private javax.swing.JTextField txtMaximoParticipantes;
     private javax.swing.JTextField txtNombreConcurso;
     private javax.swing.JTextField txtNombreEmpresa;
