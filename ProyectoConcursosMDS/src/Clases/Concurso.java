@@ -49,7 +49,7 @@ public class Concurso implements Verificacion, Serializable {
              JOptionPane.showMessageDialog(null, "El minimo de participantes por concursos es de 6","Error",JOptionPane.ERROR_MESSAGE);
          return false;
          }
-         if(!(maxParticipantes>minParticipantes)){
+         if(!(maxParticipantes>=minParticipantes)){
              JOptionPane.showMessageDialog(null, "El mumero maximo de participantes debe ser mayor al minimo de participantes","Error",JOptionPane.ERROR_MESSAGE);
          return false;
          }
