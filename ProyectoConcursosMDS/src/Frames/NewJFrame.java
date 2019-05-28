@@ -809,7 +809,7 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         try {
             if(evaluador!=null){
-            Concurso concurso=new Concurso(Integer.parseInt(txtMaximoParticipantes.getText()), Integer.parseInt(txtminimoParticipantes.getText()), new Fecha(0, 0, 0), new Fecha(0, 0, 0), txtNombreConcurso.getText(), evaluador);
+            Concurso concurso=new Concurso(Integer.parseInt(txtMaximoParticipantes.getText()), Integer.parseInt(txtminimoParticipantes.getText()), new Fecha(0, 0, 0), new Fecha(0, 0, 3), txtNombreConcurso.getText(), evaluador);
             if(concurso.verificarDatos()){
             empresa.getConcusos().add(concurso);
             TablaConcursos();
