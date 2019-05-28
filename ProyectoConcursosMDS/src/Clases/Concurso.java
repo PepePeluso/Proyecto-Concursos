@@ -77,7 +77,7 @@ public class Concurso implements Verificacion, Serializable {
             }
         }
         participantes.add(participante);
-        JOptionPane.showMessageDialog(null, "Participante agragado correctamente al concurso "+nombre);
+        JOptionPane.showMessageDialog(null, "Participante agragado correctamente al concurso: "+nombre);
         return true;
     }
     return false;
