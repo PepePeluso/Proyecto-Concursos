@@ -46,19 +46,19 @@ public class Concurso implements Verificacion, Serializable {
          return false;
          }
          if(!(minParticipantes>5)){
-             JOptionPane.showMessageDialog(null, "El minimo de participantes po concursos es de 5","Error",JOptionPane.ERROR_MESSAGE);
+             JOptionPane.showMessageDialog(null, "El minimo de participantes por concursos es de 6","Error",JOptionPane.ERROR_MESSAGE);
          return false;
          }
          if(!(maxParticipantes>minParticipantes)){
              JOptionPane.showMessageDialog(null, "El mumero maximo de participantes debe ser mayor al minimo de participantes","Error",JOptionPane.ERROR_MESSAGE);
          return false;
          }
-         if(!(fechaInicioConcurso.validarFecha(new Fecha()))){
-             JOptionPane.showMessageDialog(null, "La fecha de inicio de ser igual o mayor a la fecha de hoy","Error",JOptionPane.ERROR_MESSAGE);
+         if(!(new Fecha().validarFecha(fechaInicioConcurso))){
+             JOptionPane.showMessageDialog(null, "La fecha de inicio debe ser igual o mayor a la fecha de hoy","Error",JOptionPane.ERROR_MESSAGE);
          return false;
          }
          
-         if(!(fechaFinConcurso.validarFecha(fechaInicioConcurso))){
+         if(!(fechaInicioConcurso.validarFecha(fechaFinConcurso))){
              JOptionPane.showMessageDialog(null, "Fecha de fin de concurso debe ser mayor a fecha de inicio del concurso","Error",JOptionPane.ERROR_MESSAGE);
          return false;
          }
@@ -72,7 +72,7 @@ public class Concurso implements Verificacion, Serializable {
     if(participante.verificarDatos()){
         for (int i = 0; i < participantes.size(); i++) {
             if(i<maxParticipantes){
-            if(participantes.get(i).getCedula()==participante.getCedula()){
+            if(participantes.get(i).getCedula().equals(participante.getCedula())){
                 JOptionPane.showMessageDialog(null, "Este participante ya existe","Error",JOptionPane.ERROR_MESSAGE);
                 return false;
                         }
