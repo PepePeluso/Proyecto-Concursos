@@ -124,13 +124,13 @@ public class Empresa implements Verificacion,Serializable {
  public boolean AgregarConcurso(Concurso concurso){
     if(concurso.verificarDatos()){
         for (int i = 0; i < concusos.size(); i++) {
-            if(concusos.get(i).getNombre()==concurso.getNombre()){
+            if(concusos.get(i).getNombre().equals(concurso.getNombre())){
                 JOptionPane.showMessageDialog(null, "Hay un concurso con el mismo nombre,Cambie de nombre a su concurso!","Error",JOptionPane.ERROR_MESSAGE);
                 return false;
-                 }                
+              }                
             }
+         JOptionPane.showMessageDialog(null, "Concurso agregado correctamente");
          concusos.add(concurso);
-        JOptionPane.showMessageDialog(null, "Concurso agregado correctamente");
         return true;
         }
        
@@ -140,7 +140,7 @@ public class Empresa implements Verificacion,Serializable {
  public boolean AgregarEvaluador(Evaluador evaluador){
     if(evaluador.verificarDatos()){
         for (int i = 0; i < evaluadores.size(); i++) {
-            if(evaluadores.get(i).getCedula()==evaluador.getCedula()){
+            if(evaluadores.get(i).getCedula().equals(evaluador.getCedula())){
                 JOptionPane.showMessageDialog(null, "Ya exite este evaluador","Error",JOptionPane.ERROR_MESSAGE);
                 return false;
                  }                
