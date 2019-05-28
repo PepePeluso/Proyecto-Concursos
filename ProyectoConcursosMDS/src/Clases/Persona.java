@@ -7,6 +7,7 @@ package Clases;
  ***********************************************************************/
 
 import java.util.*;
+import javax.swing.JOptionPane;
 
 /** @pdOid 0d7970b2-e7ae-48ec-9fc3-8d909a3fae84 */
 public abstract class Persona {
@@ -82,12 +83,12 @@ public abstract class Persona {
         } catch (NumberFormatException nfe) {
             cedulaCorrecta = false;
         } catch (Exception err) {
-            System.out.println("Una excepcion ocurrio en el proceso de validadcion");
+            JOptionPane.showMessageDialog(null,"Una excepcion ocurrio en el proceso de validadcion");
             cedulaCorrecta = false;
         }
 
         if (!cedulaCorrecta) {
-            System.out.println("La Cédula ingresada es Incorrecta");
+            JOptionPane.showMessageDialog(null,"La Cédula ingresada es Incorrecta");
         }
         return cedulaCorrecta;
         
