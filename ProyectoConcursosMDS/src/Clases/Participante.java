@@ -68,11 +68,11 @@ public class Participante extends Persona implements Verificacion,Serializable {
     @Override
     public boolean verificarDatos() {
          if(calcularEdad()<=0){
-        JOptionPane.showMessageDialog(null,"ha usted aun no  lo proquean,ojala no nasca");
+        JOptionPane.showMessageDialog(null,"Es un bebe o aun no nace,Fecha incorrecta!");
          return false;
         }
         if (!(calcularEdad()>=18)) {
-            JOptionPane.showMessageDialog(null, "Usted debe tener mas 18 años ára poder reguistrase",null, JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Usted debe tener mas 18 años pára poder reguistrase,Fecha incorrecta!",null, JOptionPane.ERROR_MESSAGE);
             return false;
         }      
         
