@@ -28,6 +28,54 @@ public class Empresa implements Verificacion,Serializable {
    /** @pdOid 36ab6815-c7c9-405d-abac-fbcb1b54378c */
    private Login login;
 
+    public ArrayList<Evaluador> getEvaluadores() {
+        return evaluadores;
+    }
+
+    public void setEvaluadores(ArrayList<Evaluador> evaluadores) {
+        this.evaluadores = evaluadores;
+    }
+
+    public ArrayList<Concurso> getConcusos() {
+        return concusos;
+    }
+
+    public void setConcusos(ArrayList<Concurso> concusos) {
+        this.concusos = concusos;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
+
+    public Direccion getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
+    }
+
+    public Login getLogin() {
+        return login;
+    }
+
+    public void setLogin(Login login) {
+        this.login = login;
+    }
+
     public Empresa() {
     }
 
