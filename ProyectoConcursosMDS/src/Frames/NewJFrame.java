@@ -126,6 +126,17 @@ public class NewJFrame extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         dchInicio = new com.toedter.calendar.JDateChooser();
         dchFin = new com.toedter.calendar.JDateChooser();
+        EvaluarParticipante = new javax.swing.JFrame();
+        jButton11 = new javax.swing.JButton();
+        jComboParaEvaluar = new javax.swing.JComboBox<>();
+        jLabel21 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        TablaParticpantes = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        TablaParticipantesEvaluados = new javax.swing.JTable();
+        jButton12 = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
+        jButton14 = new javax.swing.JButton();
         RegistroPostulante = new javax.swing.JFrame();
         jButton9 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
@@ -140,17 +151,6 @@ public class NewJFrame extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         TablaConcursos = new javax.swing.JTable();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        EvaluarParticipante = new javax.swing.JFrame();
-        jButton11 = new javax.swing.JButton();
-        jComboParaEvaluar = new javax.swing.JComboBox<>();
-        jLabel21 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        TablaParticpantes = new javax.swing.JTable();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        TablaParticipantesEvaluados = new javax.swing.JTable();
-        jButton12 = new javax.swing.JButton();
-        jLabel22 = new javax.swing.JLabel();
-        jButton14 = new javax.swing.JButton();
         RegistrarEvaluador = new javax.swing.JFrame();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -373,6 +373,98 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGap(26, 26, 26))
         );
 
+        jButton11.setText("Evaluar");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
+        jLabel21.setText("Concursos");
+
+        TablaParticpantes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(TablaParticpantes);
+
+        TablaParticipantesEvaluados.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(TablaParticipantesEvaluados);
+
+        jButton12.setText("Eliminar Postulante");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+
+        jLabel22.setText("Evaluado deacurdo a su edad y años de experiencia");
+
+        jButton14.setText("Ver participantes");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout EvaluarParticipanteLayout = new javax.swing.GroupLayout(EvaluarParticipante.getContentPane());
+        EvaluarParticipante.getContentPane().setLayout(EvaluarParticipanteLayout);
+        EvaluarParticipanteLayout.setHorizontalGroup(
+            EvaluarParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EvaluarParticipanteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(EvaluarParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton12)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EvaluarParticipanteLayout.createSequentialGroup()
+                        .addComponent(jLabel21)
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboParaEvaluar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton11)))
+                .addGap(24, 24, 24))
+        );
+        EvaluarParticipanteLayout.setVerticalGroup(
+            EvaluarParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EvaluarParticipanteLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(EvaluarParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton11)
+                    .addComponent(jComboParaEvaluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21)
+                    .addComponent(jButton14))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(jLabel22)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jButton12)
+                .addContainerGap(52, Short.MAX_VALUE))
+        );
+
         jButton9.setText("Registrar");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -474,98 +566,6 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton9)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jButton11.setText("Evaluar");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
-
-        jLabel21.setText("Concursos");
-
-        TablaParticpantes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(TablaParticpantes);
-
-        TablaParticipantesEvaluados.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane3.setViewportView(TablaParticipantesEvaluados);
-
-        jButton12.setText("Eliminar Postulante");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
-            }
-        });
-
-        jLabel22.setText("Evaluado deacurdo a su edad y años de experiencia");
-
-        jButton14.setText("Ver participantes");
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout EvaluarParticipanteLayout = new javax.swing.GroupLayout(EvaluarParticipante.getContentPane());
-        EvaluarParticipante.getContentPane().setLayout(EvaluarParticipanteLayout);
-        EvaluarParticipanteLayout.setHorizontalGroup(
-            EvaluarParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EvaluarParticipanteLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(EvaluarParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton12)
-                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EvaluarParticipanteLayout.createSequentialGroup()
-                        .addComponent(jLabel21)
-                        .addGap(18, 18, 18)
-                        .addComponent(jComboParaEvaluar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton11)))
-                .addGap(24, 24, 24))
-        );
-        EvaluarParticipanteLayout.setVerticalGroup(
-            EvaluarParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EvaluarParticipanteLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(EvaluarParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton11)
-                    .addComponent(jComboParaEvaluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel21)
-                    .addComponent(jButton14))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(jLabel22)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(jButton12)
-                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         jLabel18.setText("Nombre:");
@@ -749,7 +749,7 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 if(empresa==null){
 RegistroEmpresa.setVisible(true);
-RegistroEmpresa.setSize(350,400);
+RegistroEmpresa.setSize(400,400);
 RegistroEmpresa.setLocationRelativeTo(this);
 }else{
 JOptionPane.showMessageDialog(null, "Ya existe una empresa reguistrarda");
@@ -759,7 +759,7 @@ JOptionPane.showMessageDialog(null, "Ya existe una empresa reguistrarda");
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
      RegistroPostulante.setVisible(true);
-         RegistroPostulante.setSize(350,400);
+         RegistroPostulante.setSize(450,470);
          RegistroPostulante.setLocationRelativeTo(this);
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -813,7 +813,7 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
       RegistrarEvaluador.setVisible(true);
-      RegistrarEvaluador.setSize(300,300);
+      RegistrarEvaluador.setSize(400,300);
       RegistrarEvaluador.setLocationRelativeTo(null);      
     }//GEN-LAST:event_jButton7ActionPerformed
 
