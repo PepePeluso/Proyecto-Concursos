@@ -176,6 +176,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jButton14 = new javax.swing.JButton();
         lblevluador = new javax.swing.JLabel();
+        jButton16 = new javax.swing.JButton();
         RegistroPostulante = new javax.swing.JFrame();
         jButton9 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
@@ -211,11 +212,35 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel1.setText("Nombre de  Empresa:");
 
+        txtNombreEmpresa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreEmpresaKeyTyped(evt);
+            }
+        });
+
         jLabel2.setText("Calle principal: ");
+
+        txtCallePrincipal.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCallePrincipalKeyTyped(evt);
+            }
+        });
 
         jLabel3.setText("Calle Secundaria: ");
 
+        txtCalleSecundaria.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCalleSecundariaKeyTyped(evt);
+            }
+        });
+
         jLabel4.setText("Telefono:");
+
+        txtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoKeyTyped(evt);
+            }
+        });
 
         jLabel5.setText("Usuario:");
 
@@ -491,6 +516,13 @@ public class NewJFrame extends javax.swing.JFrame {
 
         lblevluador.setText("Evaluador: ");
 
+        jButton16.setText("Ver evaluados");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout EvaluarParticipanteLayout = new javax.swing.GroupLayout(EvaluarParticipante.getContentPane());
         EvaluarParticipante.getContentPane().setLayout(EvaluarParticipanteLayout);
         EvaluarParticipanteLayout.setHorizontalGroup(
@@ -500,8 +532,6 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(EvaluarParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(EvaluarParticipanteLayout.createSequentialGroup()
                         .addGroup(EvaluarParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton12)
-                            .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EvaluarParticipanteLayout.createSequentialGroup()
@@ -511,7 +541,15 @@ public class NewJFrame extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton14)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton11)))
+                                .addComponent(jButton11))
+                            .addGroup(EvaluarParticipanteLayout.createSequentialGroup()
+                                .addGroup(EvaluarParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton12)
+                                    .addGroup(EvaluarParticipanteLayout.createSequentialGroup()
+                                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jButton16)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(24, 24, 24))
                     .addGroup(EvaluarParticipanteLayout.createSequentialGroup()
                         .addComponent(lblevluador, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -528,15 +566,17 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(jButton14))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(jLabel22)
+                .addGap(38, 38, 38)
+                .addGroup(EvaluarParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(jButton16))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
                 .addComponent(lblevluador)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton12)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         jButton9.setText("Registrar");
@@ -582,35 +622,36 @@ public class NewJFrame extends javax.swing.JFrame {
         RegistroPostulanteLayout.setHorizontalGroup(
             RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegistroPostulanteLayout.createSequentialGroup()
-                .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(RegistroPostulanteLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton9))
-                    .addGroup(RegistroPostulanteLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(RegistroPostulanteLayout.createSequentialGroup()
-                                .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtAñosExperiencia1)
-                                    .addComponent(jComboProfecion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(dchNaciminetoParticipante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addContainerGap()
+                                .addComponent(jButton9))
                             .addGroup(RegistroPostulanteLayout.createSequentialGroup()
-                                .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtNombreParticipante)
-                                    .addComponent(txtCedulaParticipante)))))
-                    .addGroup(RegistroPostulanteLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(RegistroPostulanteLayout.createSequentialGroup()
+                                        .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtAñosExperiencia1)
+                                            .addComponent(jComboProfecion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(dchNaciminetoParticipante, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)))
+                                    .addGroup(RegistroPostulanteLayout.createSequentialGroup()
+                                        .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtNombreParticipante, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
+                                            .addComponent(txtCedulaParticipante))))))
+                        .addGap(0, 37, Short.MAX_VALUE))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE))
+                .addContainerGap())
         );
         RegistroPostulanteLayout.setVerticalGroup(
             RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -814,7 +855,7 @@ if(login!=null){
         LoginIngreso.setLocationRelativeTo(this);
         conventana=true;   
 }else{
-JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
+JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Registrada");
 }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -824,7 +865,7 @@ RegistroEmpresa.setVisible(true);
 RegistroEmpresa.setSize(400,400);
 RegistroEmpresa.setLocationRelativeTo(this);
 }else{
-JOptionPane.showMessageDialog(null, "Ya existe una empresa reguistrarda");
+JOptionPane.showMessageDialog(null, "Ya existe una empresa registrarda");
 }
         
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -842,7 +883,7 @@ JOptionPane.showMessageDialog(null, "Ya existe una empresa reguistrarda");
         LoginIngreso.setLocationRelativeTo(this);
         conventana=false;   
 }else{
-JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
+JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Registrada");
 }
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -868,7 +909,7 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
             if(login.verificarlogin(new Login(txtUsuarioLogin.getText(), txtContraseñaLogin.getText()))){
             if(conventana){
             RegistroConcurso.setVisible(true);
-            RegistroConcurso.setSize(450,400);
+            RegistroConcurso.setSize(450,600);
             RegistroConcurso.setLocationRelativeTo(this);
             txtUsuarioLogin.setText("");
             txtContraseñaLogin.setText("");
@@ -958,10 +999,15 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         try {
+           
             Concurso concurso=empresa.getConcusos().get(jComboParaEvaluar.getSelectedIndex());
+            if(concurso.getSeleccionados()==null){
            concurso.setSeleccionados(concurso.getEvaluador().Aprobados(concurso.getParticipantes()));
             TablaEvaluados(jComboParaEvaluar.getSelectedIndex());
             lblevluador.setText("Evaluador: "+concurso.getEvaluador().getNombre());
+            }else{
+            JOptionPane.showMessageDialog(null, "Este concurso ya fue evaluado");
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "No ha esxoguido ningun concurso para evaluar");
         }
@@ -976,6 +1022,9 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
       try {
             empresa.getConcusos().get(jComboParaEvaluar.getSelectedIndex()).getSeleccionados().remove(TablaParticipantesEvaluados.getSelectedRow());
+            TablaEvaluados(jComboParaEvaluar.getSelectedIndex());         
+                    
+             
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "No ha seleccionado ningun Participante Evaluado para Eliminar");
@@ -985,12 +1034,56 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         try {
             empresa.getConcusos().remove(TablaConcursosElinimos.getSelectedRow());
+            TablaConcursos();
+            TablaConcursoEliminamos();
+            jComboParaEvaluar.removeAllItems();
+                for (int i = 0; i < empresa.getConcusos().size(); i++) {
+                   jComboParaEvaluar.addItem(empresa.getConcusos().get(i).getNombre()); 
+                } 
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "No ha seleccionado ningun concurso para Eliminar");
         }
        
     }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        try {
+             Concurso concurso=empresa.getConcusos().get(jComboParaEvaluar.getSelectedIndex());
+    if(concurso.getSeleccionados()!=null){
+        TablaEvaluados(jComboParaEvaluar.getSelectedIndex());
+    }else{
+    JOptionPane.showMessageDialog(null, "No se ha evaluado a este concurso");
+    }
+        } catch (Exception e) {
+             JOptionPane.showMessageDialog(null, "No ha seleccionado ningun concurso");
+        }
+       
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void txtNombreEmpresaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreEmpresaKeyTyped
+       char validar=evt.getKeyChar();
+        if(!Character.isLetter(validar))evt.consume();
+        
+    }//GEN-LAST:event_txtNombreEmpresaKeyTyped
+
+    private void txtCallePrincipalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCallePrincipalKeyTyped
+       char validar=evt.getKeyChar();
+        if(!Character.isLetter(validar))evt.consume();
+    }//GEN-LAST:event_txtCallePrincipalKeyTyped
+
+    private void txtCalleSecundariaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCalleSecundariaKeyTyped
+         char validar=evt.getKeyChar();
+        if(!Character.isLetter(validar))evt.consume();
+    }//GEN-LAST:event_txtCalleSecundariaKeyTyped
+
+    private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped
+         char validar=evt.getKeyChar();
+        
+        int v=txtTelefono.getText().length();
+        
+        if (validar<'0' || validar>'9' || v<0 || v>9) evt.consume();
+    }//GEN-LAST:event_txtTelefonoKeyTyped
 
     /**
      * @param args the command line arguments
@@ -1050,6 +1143,7 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
