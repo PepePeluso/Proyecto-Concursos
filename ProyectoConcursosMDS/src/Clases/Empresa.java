@@ -125,7 +125,7 @@ public class Empresa implements Verificacion,Serializable {
     if(concurso.verificarDatos()){
         for (int i = 0; i < concusos.size(); i++) {
             if(concusos.get(i).getNombre().equals(concurso.getNombre())){
-                JOptionPane.showMessageDialog(null, "Hay un concurso con el mismo nombre,Cambie de nombre a su concurso!","Error",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Hay un concurso con el mismo nombre,Cambie el nombre a su concurso!","Error",JOptionPane.ERROR_MESSAGE);
                 return false;
               }                
             }
