@@ -87,6 +87,20 @@ public class NewJFrame extends javax.swing.JFrame {
         }
         }
     }
+      public  void TablaEvaluados(int n){
+       String Cabecera4[]={"Nombre","Cedula","Fecha de Nacimiento","Años de Experiencia","Profeccion"};    
+           modelo4=new DefaultTableModel(null,Cabecera4);
+           TablaParticipantesEvaluados.setModel(modelo4);   
+         for (int i = 0; i < empresa.getConcusos().get(n).getSeleccionados().size(); i++) {
+              modelo4.addRow(new Object[]{
+            empresa.getConcusos().get(n).getSeleccionados().get(i).getNombre(),
+            empresa.getConcusos().get(n).getSeleccionados().get(i).getCedula(),
+            empresa.getConcusos().get(n).getSeleccionados().get(i).getFechaNacimiento().imprimir(),
+            empresa.getConcusos().get(n).getSeleccionados().get(i).getAnosEXperiencia(),
+            empresa.getConcusos().get(n).getSeleccionados().get(i).getProfesion()
+            });
+        }
+      }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -138,6 +152,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jButton12 = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jButton14 = new javax.swing.JButton();
+        lblevluador = new javax.swing.JLabel();
         RegistroPostulante = new javax.swing.JFrame();
         jButton9 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
@@ -424,6 +439,8 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        lblevluador.setText("Evaluador: ");
+
         javax.swing.GroupLayout EvaluarParticipanteLayout = new javax.swing.GroupLayout(EvaluarParticipante.getContentPane());
         EvaluarParticipante.getContentPane().setLayout(EvaluarParticipanteLayout);
         EvaluarParticipanteLayout.setHorizontalGroup(
@@ -431,19 +448,24 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(EvaluarParticipanteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(EvaluarParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton12)
-                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EvaluarParticipanteLayout.createSequentialGroup()
-                        .addComponent(jLabel21)
-                        .addGap(18, 18, 18)
-                        .addComponent(jComboParaEvaluar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton11)))
-                .addGap(24, 24, 24))
+                    .addGroup(EvaluarParticipanteLayout.createSequentialGroup()
+                        .addGroup(EvaluarParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton12)
+                            .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EvaluarParticipanteLayout.createSequentialGroup()
+                                .addComponent(jLabel21)
+                                .addGap(18, 18, 18)
+                                .addComponent(jComboParaEvaluar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton11)))
+                        .addGap(24, 24, 24))
+                    .addGroup(EvaluarParticipanteLayout.createSequentialGroup()
+                        .addComponent(lblevluador, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         EvaluarParticipanteLayout.setVerticalGroup(
             EvaluarParticipanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -460,7 +482,9 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(jLabel22)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGap(7, 7, 7)
+                .addComponent(lblevluador)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton12)
                 .addContainerGap(52, Short.MAX_VALUE))
         );
@@ -781,6 +805,7 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
             login=null;
             }else{
             JOptionPane.showMessageDialog(null, "Registro Correcto");
+            RegistroEmpresa.setVisible(false);
             }
             
         } catch (Exception e) {
@@ -795,14 +820,19 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
             RegistroConcurso.setVisible(true);
             RegistroConcurso.setSize(450,400);
             RegistroConcurso.setLocationRelativeTo(this);
+            txtUsuarioLogin.setText("");
+            txtContraseñaLogin.setText("");
+            LoginIngreso.setVisible(false);
             }else{
              EvaluarParticipante.setVisible(true);
              EvaluarParticipante.setSize(450,450);
              EvaluarParticipante.setLocationRelativeTo(this);
+             txtUsuarioLogin.setText("");
+             txtContraseñaLogin.setText("");
+             LoginIngreso.setVisible(false);
             }
             }
-           txtUsuarioLogin.setText("");
-           txtContraseñaLogin.setText("");
+           
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Casillas bacias");
@@ -827,17 +857,16 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         try {
             if(evaluador!=null){
-            Concurso concurso=new Concurso(Integer.parseInt(txtMaximoParticipantes.getText()), Integer.parseInt(txtminimoParticipantes.getText()), new Fecha(0, 0, 0), new Fecha(0, 0, 3), txtNombreConcurso.getText(), evaluador);
+            Concurso concurso=new Concurso(Integer.parseInt(txtMaximoParticipantes.getText()), Integer.parseInt(txtminimoParticipantes.getText()), new Fecha(dchInicio.getCalendar().get(Calendar.DAY_OF_MONTH), dchInicio.getCalendar().get(Calendar.MONTH)+1, dchInicio.getCalendar().get(Calendar.YEAR)), new Fecha(dchFin.getCalendar().get(Calendar.DAY_OF_MONTH), dchFin.getCalendar().get(Calendar.MONTH)+1, dchFin.getCalendar().get(Calendar.YEAR)),txtNombreConcurso.getText(), evaluador);
             if(concurso.verificarDatos()){
-            empresa.getConcusos().add(concurso);
+            empresa.AgregarConcurso(concurso);
             TablaConcursos();
             jComboParaEvaluar.removeAllItems();
                 for (int i = 0; i < empresa.getConcusos().size(); i++) {
                    jComboParaEvaluar.addItem(empresa.getConcusos().get(i).getNombre()); 
                 }
             
-            JOptionPane.showMessageDialog(null, "Concurso registrado Correctamente");
-            }
+             }
             }else{
             JOptionPane.showMessageDialog(null, "Escoja un Evaluador");
             }
@@ -859,9 +888,9 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         try {
-         Evaluador evaluador1=new Evaluador(txtNombreEvaluador.getText(), txtCedulaEvaluador.getText(), new Fecha(0,0,0));
+         Evaluador evaluador1=new Evaluador(txtNombreEvaluador.getText(), txtCedulaEvaluador.getText(), new Fecha(dchNaciminetoEvaluador.getCalendar().get(Calendar.DAY_OF_MONTH), dchNaciminetoEvaluador.getCalendar().get(Calendar.MONTH)+1, dchNaciminetoEvaluador.getCalendar().get(Calendar.YEAR)));
          if(evaluador1.verificarDatos()){
-         empresa.getEvaluadores().add(evaluador1);
+         empresa.AgregarEvaluador(evaluador1);
          TablaEvaluadores();
          }
         } catch (Exception e) {
@@ -877,21 +906,16 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-      Concurso concurso=empresa.getConcusos().get(jComboParaEvaluar.getSelectedIndex());
-      ArrayList<Participante> participantes1=concurso.getEvaluador().Aprobados(concurso.getParticipantes());
-     String Cabecera4[]={"Nombre","Cedula","Fecha de Nacimiento","Años de Experiencia","Profeccion"};    
-        modelo4=new DefaultTableModel(null,Cabecera4);
-        TablaParticipantesEvaluados.setModel(modelo4);   
-      for (int i = 0; i < participantes1.size(); i++) {
-              modelo4.addRow(new Object[]{
-            participantes1.get(i).getNombre(),
-            participantes1.get(i).getCedula(),
-            participantes1.get(i).getFechaNacimiento().imprimir(),
-            participantes1.get(i).getAnosEXperiencia(),
-            participantes1.get(i).getProfesion()
-            });
+        try {
+            Concurso concurso=empresa.getConcusos().get(jComboParaEvaluar.getSelectedIndex());
+           concurso.setSeleccionados(concurso.getEvaluador().Aprobados(concurso.getParticipantes()));
+            TablaEvaluados(jComboParaEvaluar.getSelectedIndex());
+            lblevluador.setText("Evaluador: "+concurso.getEvaluador().getNombre());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No ha esxoguido ningun concurso para evaluar");
         }
-      concurso.setSeleccionados(participantes1);
+        
+        
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void txtContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContrasenaActionPerformed
@@ -995,6 +1019,7 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Reguistrada");
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JLabel lblevluador;
     private javax.swing.JTextField txtAñosExperiencia1;
     private javax.swing.JTextField txtCallePrincipal;
     private javax.swing.JTextField txtCalleSecundaria;
