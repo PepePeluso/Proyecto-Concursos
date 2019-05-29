@@ -33,7 +33,7 @@ public class NewJFrame extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(this);
          try {
-           ObjectInputStream abrir=new ObjectInputStream(new FileInputStream(""));
+           ObjectInputStream abrir=new ObjectInputStream(new FileInputStream("archivo.conc"));
            empresa= (Empresa)abrir.readObject();
            abrir.close();
            login=empresa.getLogin();
