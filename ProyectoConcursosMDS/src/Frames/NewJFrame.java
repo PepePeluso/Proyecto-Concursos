@@ -852,6 +852,7 @@ public class NewJFrame extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 153, 153));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -1214,7 +1215,7 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Registrada");
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         try {
-            ObjectOutputStream Guardar = new ObjectOutputStream(new FileOutputStream(""));
+            ObjectOutputStream Guardar = new ObjectOutputStream(new FileOutputStream("archivo.conc"));
             Guardar.writeObject(empresa);
             Guardar.close();
         } catch (Exception e) {
