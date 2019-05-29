@@ -102,8 +102,8 @@ public class Empresa implements Verificacion,Serializable {
         if(!login.verificarDatos())
             return false;
         String te=Integer.toString(telefono);
-        if(!(te.length()==10)){
-        JOptionPane.showMessageDialog(null, "Numero de telefono incorrecto,Numero de digitos  igual a 10");
+        if(!(te.length()>=6)){
+        JOptionPane.showMessageDialog(null, "Numero de telefono incorrecto,Numero de digitos  mayor igual a 6");
         return false;
         }
         return true;
