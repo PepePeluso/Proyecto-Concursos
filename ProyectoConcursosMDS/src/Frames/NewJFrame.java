@@ -1098,19 +1098,19 @@ JOptionPane.showMessageDialog(null, "No existe ninguna Empresa Registrada");
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         try {
-           
-            Concurso concurso=empresa.getConcusos().get(jComboParaEvaluar.getSelectedIndex());
-            if(concurso.getSeleccionados()==null){
-           concurso.setSeleccionados(concurso.getEvaluador().Aprobados(concurso.getParticipantes()));
-            TablaEvaluados(jComboParaEvaluar.getSelectedIndex());
-            lblevluador.setText("Evaluador: "+concurso.getEvaluador().getNombre());
-            }else{
-            JOptionPane.showMessageDialog(null, "Este concurso ya fue evaluado");
+
+            Concurso concurso = empresa.getConcusos().get(jComboParaEvaluar.getSelectedIndex());
+            if (concurso.getSeleccionados() == null) {
+                concurso.setSeleccionados(concurso.getEvaluador().Aprobados(concurso.getParticipantes()));
+                TablaEvaluados(jComboParaEvaluar.getSelectedIndex());
+                lblevluador.setText("Evaluador: " + concurso.getEvaluador().getNombre());
+            } else {
+                JOptionPane.showMessageDialog(null, "Este concurso ya fue evaluado");
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "No ha escoguido ningun concurso para evaluar");
         }
-        
+
         
     }//GEN-LAST:event_jButton11ActionPerformed
 
@@ -1162,7 +1162,7 @@ JOptionPane.showMessageDialog(null, "No existe ninguna Empresa Registrada");
 
     private void txtNombreEmpresaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreEmpresaKeyTyped
        char validar=evt.getKeyChar();
-        if(!Character.isLetter(validar))evt.consume();
+        if(!Character.isLetter(validar)&&!Character.isSpaceChar(validar))evt.consume();
         
     }//GEN-LAST:event_txtNombreEmpresaKeyTyped
 
