@@ -101,7 +101,13 @@ public class Empresa implements Verificacion,Serializable {
     public boolean verificarDatos() {
         if(!login.verificarDatos())
             return false;
+        String te=Integer.toString(telefono);
+        if(!(te.length()==10)){
+        JOptionPane.showMessageDialog(null, "Numero de telefono incorrecto,Numero de digitos  igual a 10");
+        return false;
+        }
         return true;
+        
                     
     }
  public boolean AgregarConcurso(Concurso concurso){
