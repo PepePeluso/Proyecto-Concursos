@@ -54,8 +54,8 @@ public class NewJFrame extends javax.swing.JFrame {
         modelo4=new DefaultTableModel(null,Cabecera4);
         TablaParticipantesEvaluados.setModel(modelo4);
         TablaConcursoEliminamos();
-        
-          
+        btnRegistrarConcurso.setEnabled(false);
+        btnRegistroParticipante.setEnabled(false);
     }
     public  void TablaEvaluadores(){
     String Cabecera1[]={"Nombre","Cedula","Fecha de Nacimiento"};    
@@ -163,7 +163,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         txtContrasena = new javax.swing.JPasswordField();
         RegistroConcurso = new javax.swing.JFrame();
-        jButton6 = new javax.swing.JButton();
+        btnRegistrarConcurso = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -181,6 +181,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         TablaConcursosElinimos = new javax.swing.JTable();
         jButton15 = new javax.swing.JButton();
+        ckbTerminosConcurso = new javax.swing.JCheckBox();
         EvaluarParticipante = new javax.swing.JFrame();
         jButton11 = new javax.swing.JButton();
         jComboParaEvaluar = new javax.swing.JComboBox<>();
@@ -195,7 +196,7 @@ public class NewJFrame extends javax.swing.JFrame {
         lblevluador = new javax.swing.JLabel();
         jButton16 = new javax.swing.JButton();
         RegistroPostulante = new javax.swing.JFrame();
-        jButton9 = new javax.swing.JButton();
+        btnRegistroParticipante = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -208,6 +209,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         TablaConcursos = new javax.swing.JTable();
         dchNaciminetoParticipante = new com.toedter.calendar.JDateChooser();
+        chkTerminosParticipante = new javax.swing.JCheckBox();
         RegistrarEvaluador = new javax.swing.JFrame();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -348,10 +350,10 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
-        jButton6.setText("Registrar");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrarConcurso.setText("Registrar");
+        btnRegistrarConcurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnRegistrarConcursoActionPerformed(evt);
             }
         });
 
@@ -430,6 +432,13 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        ckbTerminosConcurso.setText("Acepto los términos y condiciones");
+        ckbTerminosConcurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ckbTerminosConcursoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout RegistroConcursoLayout = new javax.swing.GroupLayout(RegistroConcurso.getContentPane());
         RegistroConcurso.getContentPane().setLayout(RegistroConcursoLayout);
         RegistroConcursoLayout.setHorizontalGroup(
@@ -457,14 +466,16 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroConcursoLayout.createSequentialGroup()
                                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton7))
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 527, Short.MAX_VALUE))
+                                .addComponent(jButton7)))
                         .addContainerGap())
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE)
                     .addGroup(RegistroConcursoLayout.createSequentialGroup()
-                        .addGroup(RegistroConcursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton6)
-                            .addComponent(jButton15))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(jButton15)
+                        .addGap(406, 416, Short.MAX_VALUE))
+                    .addGroup(RegistroConcursoLayout.createSequentialGroup()
+                        .addComponent(btnRegistrarConcurso)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(ckbTerminosConcurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         RegistroConcursoLayout.setVerticalGroup(
             RegistroConcursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -495,13 +506,15 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(jButton8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 5, Short.MAX_VALUE)
+                .addComponent(ckbTerminosConcurso)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnRegistrarConcurso)
                 .addGap(18, 18, 18)
-                .addComponent(jButton6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton15)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jButton11.setText("Evaluar");
@@ -620,10 +633,10 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
-        jButton9.setText("Registrar");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistroParticipante.setText("Registrar");
+        btnRegistroParticipante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                btnRegistroParticipanteActionPerformed(evt);
             }
         });
 
@@ -675,41 +688,49 @@ public class NewJFrame extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(TablaConcursos);
 
+        chkTerminosParticipante.setText("Acepto los términos y condiciones.");
+        chkTerminosParticipante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkTerminosParticipanteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout RegistroPostulanteLayout = new javax.swing.GroupLayout(RegistroPostulante.getContentPane());
         RegistroPostulante.getContentPane().setLayout(RegistroPostulanteLayout);
         RegistroPostulanteLayout.setHorizontalGroup(
             RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(RegistroPostulanteLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroPostulanteLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(RegistroPostulanteLayout.createSequentialGroup()
-                        .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(RegistroPostulanteLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jButton9))
-                            .addGroup(RegistroPostulanteLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(RegistroPostulanteLayout.createSequentialGroup()
-                                        .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtAñosExperiencia1)
-                                            .addComponent(jComboProfecion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(dchNaciminetoParticipante, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)))
-                                    .addGroup(RegistroPostulanteLayout.createSequentialGroup()
-                                        .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtNombreParticipante, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
-                                            .addComponent(txtCedulaParticipante))))))
-                        .addGap(0, 37, Short.MAX_VALUE))
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnRegistroParticipante)
+                        .addGap(0, 335, Short.MAX_VALUE))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(RegistroPostulanteLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chkTerminosParticipante)
+                    .addGroup(RegistroPostulanteLayout.createSequentialGroup()
+                        .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtAñosExperiencia1)
+                            .addComponent(jComboProfecion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(dchNaciminetoParticipante, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)))
+                    .addGroup(RegistroPostulanteLayout.createSequentialGroup()
+                        .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNombreParticipante, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
+                            .addComponent(txtCedulaParticipante))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         RegistroPostulanteLayout.setVerticalGroup(
             RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -734,11 +755,13 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(RegistroPostulanteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(jComboProfecion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addComponent(chkTerminosParticipante)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton9)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(btnRegistroParticipante)
+                .addContainerGap())
         );
 
         jLabel18.setText("Nombre:");
@@ -1021,7 +1044,7 @@ JOptionPane.showMessageDialog(null, "No existe ninguna Empresa Registrada");
        
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnRegistrarConcursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarConcursoActionPerformed
         try {
             if(evaluador!=null){
             Concurso concurso=new Concurso(Integer.parseInt(txtMaximoParticipantes.getText()), Integer.parseInt(txtminimoParticipantes.getText()), new Fecha(dchInicio.getCalendar().get(Calendar.DAY_OF_MONTH), dchInicio.getCalendar().get(Calendar.MONTH)+1, dchInicio.getCalendar().get(Calendar.YEAR)), new Fecha(dchFin.getCalendar().get(Calendar.DAY_OF_MONTH), dchFin.getCalendar().get(Calendar.MONTH)+1, dchFin.getCalendar().get(Calendar.YEAR)),txtNombreConcurso.getText(), evaluador);
@@ -1041,9 +1064,9 @@ JOptionPane.showMessageDialog(null, "No existe ninguna Empresa Registrada");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Datos Vacios");
         }
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btnRegistrarConcursoActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void btnRegistroParticipanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroParticipanteActionPerformed
        try {
          Participante participante=new Participante(jComboProfecion.getSelectedItem().toString(), Integer.parseInt(txtAñosExperiencia1.getText()),txtNombreParticipante.getText(), txtCedulaParticipante.getText(),new Fecha(dchNaciminetoParticipante.getCalendar().get(Calendar.DAY_OF_MONTH), dchNaciminetoParticipante.getCalendar().get(Calendar.MONTH)+1, dchNaciminetoParticipante.getCalendar().get(Calendar.YEAR)));
          if(participante.verificarDatos()){
@@ -1052,7 +1075,7 @@ JOptionPane.showMessageDialog(null, "No existe ninguna Empresa Registrada");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Datos vacios");
         }
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_btnRegistroParticipanteActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         try {
@@ -1145,12 +1168,12 @@ JOptionPane.showMessageDialog(null, "No existe ninguna Empresa Registrada");
 
     private void txtCallePrincipalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCallePrincipalKeyTyped
        char validar=evt.getKeyChar();
-        if(!Character.isLetter(validar))evt.consume();
+        if(!Character.isLetter(validar)&&!Character.isSpaceChar(validar))evt.consume();
     }//GEN-LAST:event_txtCallePrincipalKeyTyped
 
     private void txtCalleSecundariaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCalleSecundariaKeyTyped
          char validar=evt.getKeyChar();
-        if(!Character.isLetter(validar))evt.consume();
+        if(!Character.isLetter(validar)&&!Character.isSpaceChar(validar))evt.consume();
     }//GEN-LAST:event_txtCalleSecundariaKeyTyped
 
     private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped
@@ -1231,6 +1254,24 @@ JOptionPane.showMessageDialog(null, "No existe ninguna Empresa Registrada");
         if((!Character.isLetter(validar))&&!Character.isDigit(validar))evt.consume();
     }//GEN-LAST:event_txtUsuarioKeyTyped
 
+    private void ckbTerminosConcursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckbTerminosConcursoActionPerformed
+        // TODO add your handling code here:
+        if (!ckbTerminosConcurso.isSelected()){
+            btnRegistrarConcurso.setEnabled(false);
+        } else {
+            btnRegistrarConcurso.setEnabled(true);
+        }
+    }//GEN-LAST:event_ckbTerminosConcursoActionPerformed
+
+    private void chkTerminosParticipanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkTerminosParticipanteActionPerformed
+        // TODO add your handling code here:
+        if (!chkTerminosParticipante.isSelected()){
+            btnRegistroParticipante.setEnabled(false);
+        } else {
+            btnRegistroParticipante.setEnabled(true);
+        }
+    }//GEN-LAST:event_chkTerminosParticipanteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1278,6 +1319,10 @@ JOptionPane.showMessageDialog(null, "No existe ninguna Empresa Registrada");
     private javax.swing.JTable TablaEvaluadores;
     private javax.swing.JTable TablaParticipantesEvaluados;
     private javax.swing.JTable TablaParticpantes;
+    private javax.swing.JButton btnRegistrarConcurso;
+    private javax.swing.JButton btnRegistroParticipante;
+    private javax.swing.JCheckBox chkTerminosParticipante;
+    private javax.swing.JCheckBox ckbTerminosConcurso;
     private com.toedter.calendar.JDateChooser dchFin;
     private com.toedter.calendar.JDateChooser dchInicio;
     private com.toedter.calendar.JDateChooser dchNaciminetoEvaluador;
@@ -1294,10 +1339,8 @@ JOptionPane.showMessageDialog(null, "No existe ninguna Empresa Registrada");
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboParaEvaluar;
     private javax.swing.JComboBox<String> jComboProfecion;
     private javax.swing.JLabel jLabel1;
