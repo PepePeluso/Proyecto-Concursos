@@ -37,11 +37,11 @@ import javax.swing.JOptionPane;
 
     public boolean verificarlogin(Login login) {
         if (!usuario.equals(login.getUsuario())){
-            JOptionPane.showMessageDialog(null, "El usuario no coninside");
+            JOptionPane.showMessageDialog(null, "El usuario no coincide");
              return false;
         }
         if(!contrasena.equals(login.getContrasena())){
-        JOptionPane.showMessageDialog(null, "El contraseña incorrecta");
+        JOptionPane.showMessageDialog(null, "Contraseña incorrecta");
         return false;
         }
         return true;

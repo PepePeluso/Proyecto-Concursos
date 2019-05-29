@@ -103,7 +103,8 @@ public class Empresa implements Verificacion,Serializable {
             return false;
         String te=Integer.toString(telefono);
         if(!(te.length()>=6)){
-        JOptionPane.showMessageDialog(null, "Numero de telefono incorrecto,Numero de digitos  mayor igual a 6");
+        JOptionPane.showMessageDialog(null, "Número de teléfono incorrecto, "
+                + "número de digitos  mayor igual a 6");
         return false;
         }
         return true;
@@ -114,7 +115,8 @@ public class Empresa implements Verificacion,Serializable {
     if(concurso.verificarDatos()){
         for (int i = 0; i < concusos.size(); i++) {
             if(concusos.get(i).getNombre().equals(concurso.getNombre())){
-                JOptionPane.showMessageDialog(null, "Hay un concurso con el mismo nombre,Cambie el nombre a su concurso!","Error",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Hay un concurso con el "
+                        + "mismo nombre, cambie el nombre a su concurso.","Error",JOptionPane.ERROR_MESSAGE);
                 return false;
               }                
             }
@@ -130,7 +132,8 @@ public class Empresa implements Verificacion,Serializable {
     if(evaluador.verificarDatos()){
         for (int i = 0; i < evaluadores.size(); i++) {
             if(evaluadores.get(i).getCedula().equals(evaluador.getCedula())){
-                JOptionPane.showMessageDialog(null, "Ya exite este evaluador","Error",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Ya exite este evaluador",
+                        "Error",JOptionPane.ERROR_MESSAGE);
                 return false;
                  }                
             }

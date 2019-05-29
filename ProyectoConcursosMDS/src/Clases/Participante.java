@@ -68,16 +68,18 @@ public class Participante extends Persona implements Verificacion,Serializable {
     @Override
     public boolean verificarDatos() {
          if(calcularEdad()<=0){
-        JOptionPane.showMessageDialog(null,"Es un bebe o aun no nace,Fecha incorrecta!");
+        JOptionPane.showMessageDialog(null,"Es un bebé o aún no nace, fecha incorrecta!");
          return false;
         }
         if (!(calcularEdad()>=18)) {
-            JOptionPane.showMessageDialog(null, "Usted debe tener mas 18 años pára poder reguistrase,Fecha incorrecta!",null, JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Usted debe tener más de 18 años"
+                    + " pára poder registrarse, fecha incorrecta!",null, JOptionPane.ERROR_MESSAGE);
             return false;
         }      
         
         if (!((calcularEdad()-anosEXperiencia)>=10)) {
-            JOptionPane.showMessageDialog(null, "La Fecha de nacimiento no concuerda con los años de experiencia",null, JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "La Fecha de nacimiento no"
+                    + " concuerda con los años de experiencia",null, JOptionPane.ERROR_MESSAGE);
             return false;
         }
        

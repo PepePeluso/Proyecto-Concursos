@@ -34,11 +34,11 @@ public class Evaluador extends Persona implements Verificacion,Serializable {
         }
    
       if(calcularEdad()<=0){
-           JOptionPane.showMessageDialog(null,"Es un bebe o aun no nace,Fecha incorrecta!");
+           JOptionPane.showMessageDialog(null,"Es un bebe o aun no nace, fecha incorrecta!");
       return false;
       }
       if(!(calcularEdad()>18)){
-          JOptionPane.showMessageDialog(null, "Para ser evaluador debe ser mayor a 18 años,Fecha incorrecta!");
+          JOptionPane.showMessageDialog(null, "Para ser evaluador debe ser mayor a 18 años, fecha incorrecta!");
       return false;
       }
       

@@ -10,10 +10,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -49,11 +46,11 @@ public class NewJFrame extends javax.swing.JFrame {
                 }
          }
         TablaEvaluadores();
-         String Cabecera2[]={"Nombre","Cedula","Fecha de Nacimiento","Años de Experiencia","Profeccion"};    
+         String Cabecera2[]={"Nombre","Cedula","Fecha de Nacimiento","Años de Experiencia","Profesion"};    
         modelo2=new DefaultTableModel(null,Cabecera2);
         TablaParticpantes.setModel(modelo2);
         TablaConcursos();
-         String Cabecera4[]={"Nombre","Cedula","Fecha de Nacimiento","Años de Experiencia","Profeccion"};    
+         String Cabecera4[]={"Nombre","Cedula","Fecha de Nacimiento","Años de Experiencia","Profesion"};    
         modelo4=new DefaultTableModel(null,Cabecera4);
         TablaParticipantesEvaluados.setModel(modelo4);
         TablaConcursoEliminamos();
@@ -76,7 +73,7 @@ public class NewJFrame extends javax.swing.JFrame {
         }
     }
           public  void TablaConcursos(){
-    String Cabecera3[]={"Nombre","maximo de Participantes","Fecha de inicio","Fecha de fin","Nombre del evaluador"};    
+    String Cabecera3[]={"Nombre","Máximo de Participantes","Fecha de inicio","Fecha de fin","Nombre del evaluador"};    
         modelo3=new DefaultTableModel(null,Cabecera3);
         TablaConcursos.setModel(modelo3);
         if(empresa!=null){
@@ -93,7 +90,7 @@ public class NewJFrame extends javax.swing.JFrame {
         }
     }
           public  void TablaConcursoEliminamos(){
-    String Cabecera3[]={"Nombre","maximo de Participantes","Fecha de inicio","Fecha de fin","Nombre del evaluador"};    
+    String Cabecera3[]={"Nombre","Máximo de Participantes","Fecha de inicio","Fecha de fin","Nombre del evaluador"};    
         modelo5=new DefaultTableModel(null,Cabecera3);
         TablaConcursosElinimos.setModel(modelo5);
         if(empresa!=null){
@@ -112,7 +109,7 @@ public class NewJFrame extends javax.swing.JFrame {
           
     
      public  void TablaParticipantes(int numConcurso){
-    String Cabecera2[]={"Nombre","Cedula","Fecha de Nacimiento","Años de Experiencia","Profeccion"};    
+    String Cabecera2[]={"Nombre","Cedula","Fecha de Nacimiento","Años de Experiencia","Profesion"};    
         modelo2=new DefaultTableModel(null,Cabecera2);
         TablaParticpantes.setModel(modelo2);
         if(empresa!=null){
@@ -128,7 +125,7 @@ public class NewJFrame extends javax.swing.JFrame {
         }
     }
       public  void TablaEvaluados(int n){
-       String Cabecera4[]={"Nombre","Cedula","Fecha de Nacimiento","Años de Experiencia","Profeccion"};    
+       String Cabecera4[]={"Nombre","Cedula","Fecha de Nacimiento","Años de Experiencia","Profesion"};    
            modelo4=new DefaultTableModel(null,Cabecera4);
            TablaParticipantesEvaluados.setModel(modelo4);   
          for (int i = 0; i < empresa.getConcusos().get(n).getSeleccionados().size(); i++) {
