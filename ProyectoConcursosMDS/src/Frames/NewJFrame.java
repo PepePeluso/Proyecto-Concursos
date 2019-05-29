@@ -8,6 +8,8 @@ package Frames;
 import Clases.*;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -244,6 +246,8 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel5.setText("Usuario:");
 
+        txtUsuario.setText("a");
+
         jLabel6.setText("Contraseña");
 
         jButton5.setText("Registrar");
@@ -341,6 +345,24 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel10.setText("Minimo de participantes:");
 
         jLabel11.setText("Maximo de participantes:");
+
+        txtNombreConcurso.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreConcursoKeyTyped(evt);
+            }
+        });
+
+        txtminimoParticipantes.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtminimoParticipantesKeyTyped(evt);
+            }
+        });
+
+        txtMaximoParticipantes.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtMaximoParticipantesKeyTyped(evt);
+            }
+        });
 
         TablaEvaluadores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -596,9 +618,26 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel16.setText("Profeccion:");
 
+        txtNombreParticipante.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreParticipanteKeyTyped(evt);
+            }
+        });
+
+        txtCedulaParticipante.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCedulaParticipanteKeyTyped(evt);
+            }
+        });
+
         txtAñosExperiencia1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAñosExperiencia1ActionPerformed(evt);
+            }
+        });
+        txtAñosExperiencia1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAñosExperiencia1KeyTyped(evt);
             }
         });
 
@@ -693,6 +732,18 @@ public class NewJFrame extends javax.swing.JFrame {
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
+            }
+        });
+
+        txtNombreEvaluador.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreEvaluadorKeyTyped(evt);
+            }
+        });
+
+        txtCedulaEvaluador.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCedulaEvaluadorKeyTyped(evt);
             }
         });
 
@@ -1084,6 +1135,61 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Registrada");
         
         if (validar<'0' || validar>'9' || v<0 || v>9) evt.consume();
     }//GEN-LAST:event_txtTelefonoKeyTyped
+
+    private void txtNombreConcursoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreConcursoKeyTyped
+        char validar=evt.getKeyChar();
+        if(!Character.isLetter(validar))evt.consume();
+    }//GEN-LAST:event_txtNombreConcursoKeyTyped
+
+    private void txtminimoParticipantesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtminimoParticipantesKeyTyped
+       char validar=evt.getKeyChar();
+        
+        int v=txtminimoParticipantes.getText().length();
+        
+        if (validar<'0' || validar>'9' || v<0 || v>1) evt.consume();
+    }//GEN-LAST:event_txtminimoParticipantesKeyTyped
+
+    private void txtMaximoParticipantesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMaximoParticipantesKeyTyped
+      char validar=evt.getKeyChar();
+        
+        int v=txtMaximoParticipantes.getText().length();
+        
+        if (validar<'0' || validar>'9' || v<0 || v>1) evt.consume();
+    }//GEN-LAST:event_txtMaximoParticipantesKeyTyped
+
+    private void txtNombreParticipanteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreParticipanteKeyTyped
+       char validar=evt.getKeyChar();
+        if(!Character.isLetter(validar))evt.consume();
+    }//GEN-LAST:event_txtNombreParticipanteKeyTyped
+
+    private void txtCedulaParticipanteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaParticipanteKeyTyped
+        char validar=evt.getKeyChar();
+        
+        int v=txtCedulaParticipante.getText().length();
+        
+        if (validar<'0' || validar>'9' || v<0 || v>9) evt.consume();
+    }//GEN-LAST:event_txtCedulaParticipanteKeyTyped
+
+    private void txtAñosExperiencia1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAñosExperiencia1KeyTyped
+        char validar=evt.getKeyChar();
+        
+        int v=txtAñosExperiencia1.getText().length();
+        
+        if (validar<'0' || validar>'9' || v<0 || v>2) evt.consume();
+    }//GEN-LAST:event_txtAñosExperiencia1KeyTyped
+
+    private void txtNombreEvaluadorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreEvaluadorKeyTyped
+      char validar=evt.getKeyChar();
+        if(!Character.isLetter(validar))evt.consume();
+    }//GEN-LAST:event_txtNombreEvaluadorKeyTyped
+
+    private void txtCedulaEvaluadorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaEvaluadorKeyTyped
+       char validar=evt.getKeyChar();
+        
+        int v=txtCedulaEvaluador.getText().length();
+        
+        if (validar<'0' || validar>'9' || v<0 || v>9) evt.consume(); 
+    }//GEN-LAST:event_txtCedulaEvaluadorKeyTyped
 
     /**
      * @param args the command line arguments

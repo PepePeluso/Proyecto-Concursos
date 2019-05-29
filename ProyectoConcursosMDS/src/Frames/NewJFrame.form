@@ -135,6 +135,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtUsuario">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="a"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
@@ -285,10 +288,19 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNombreConcurso">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNombreConcursoKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtminimoParticipantes">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtminimoParticipantesKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtMaximoParticipantes">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtMaximoParticipantesKeyTyped"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>
@@ -658,12 +670,19 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNombreParticipante">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNombreParticipanteKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCedulaParticipante">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCedulaParticipanteKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtA&#xf1;osExperiencia1">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtA&#xf1;osExperiencia1ActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtA&#xf1;osExperiencia1KeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="jComboProfecion">
@@ -783,8 +802,14 @@
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNombreEvaluador">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNombreEvaluadorKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCedulaEvaluador">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCedulaEvaluadorKeyTyped"/>
+          </Events>
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="dchNaciminetoEvaluador">
         </Component>
