@@ -36,12 +36,18 @@ public class NewJFrame extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(this);
          try {
-           ObjectInputStream abrir=new ObjectInputStream(new FileInputStream("C:\\Users\\Diego Castillo\\Pictures\\Proyecto modelos\\Modelo"));
+           ObjectInputStream abrir=new ObjectInputStream(new FileInputStream(""));
            empresa= (Empresa)abrir.readObject();
            abrir.close();
            login=empresa.getLogin();
        } catch (Exception e) {
        }
+         if(empresa!=null){
+         jComboParaEvaluar.removeAllItems();
+                for (int i = 0; i < empresa.getConcusos().size(); i++) {
+                   jComboParaEvaluar.addItem(empresa.getConcusos().get(i).getNombre()); 
+                }
+         }
         TablaEvaluadores();
          String Cabecera2[]={"Nombre","Cedula","Fecha de Nacimiento","Años de Experiencia","Profeccion"};    
         modelo2=new DefaultTableModel(null,Cabecera2);
@@ -1208,9 +1214,9 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Registrada");
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         try {
-             ObjectOutputStream Guardar=new ObjectOutputStream( new FileOutputStream("C:\\Users\\Diego Castillo\\Pictures\\Proyecto modelos\\Modelo"));
+            ObjectOutputStream Guardar = new ObjectOutputStream(new FileOutputStream(""));
             Guardar.writeObject(empresa);
-           Guardar.close();
+            Guardar.close();
         } catch (Exception e) {
         }
        
