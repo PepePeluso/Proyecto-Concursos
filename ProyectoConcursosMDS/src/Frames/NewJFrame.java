@@ -928,7 +928,7 @@ if(login!=null){
         LoginIngreso.setLocationRelativeTo(this);
         conventana=true;   
 }else{
-JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Registrada");
+JOptionPane.showMessageDialog(null, "No existe ninguna Empresa Registrada");
 }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -956,7 +956,7 @@ JOptionPane.showMessageDialog(null, "Ya existe una empresa registrarda");
         LoginIngreso.setLocationRelativeTo(this);
         conventana=false;   
 }else{
-JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Registrada");
+JOptionPane.showMessageDialog(null, "No existe ninguna Empresa Registrada");
 }
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -999,7 +999,7 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Registrada");
            
             
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Casillas bacias");
+            JOptionPane.showMessageDialog(null, "Casillas vacias");
         }
     }//GEN-LAST:event_jButton13ActionPerformed
 
