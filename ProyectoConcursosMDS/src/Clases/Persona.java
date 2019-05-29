@@ -8,9 +8,10 @@ package Clases;
 
 import java.util.*;
 import javax.swing.JOptionPane;
+import java.io.Serializable;
 
 /** @pdOid 0d7970b2-e7ae-48ec-9fc3-8d909a3fae84 */
-public abstract class Persona {
+public abstract class Persona implements Serializable{
 
     protected String nombre;
     protected String cedula;
