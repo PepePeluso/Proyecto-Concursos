@@ -1163,7 +1163,7 @@ JOptionPane.showMessageDialog(null, "No existe ninguna Empresa Registrada");
 
     private void txtNombreConcursoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreConcursoKeyTyped
         char validar=evt.getKeyChar();
-        if(!Character.isLetter(validar))evt.consume();
+        if(!Character.isLetter(validar)&&!Character.isSpaceChar(validar))evt.consume();
     }//GEN-LAST:event_txtNombreConcursoKeyTyped
 
     private void txtminimoParticipantesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtminimoParticipantesKeyTyped
