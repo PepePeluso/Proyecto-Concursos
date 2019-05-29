@@ -1008,7 +1008,7 @@ JOptionPane.showMessageDialog(null, "No existe ninguna Empresa Registrada");
             if(login.verificarlogin(new Login(txtUsuarioLogin.getText(), txtContraseñaLogin.getText()))){
             if(conventana){
             RegistroConcurso.setVisible(true);
-            RegistroConcurso.setSize(450,600);
+            RegistroConcurso.setSize(600,600);
             RegistroConcurso.setLocationRelativeTo(this);
             txtUsuarioLogin.setText("");
             txtContraseñaLogin.setText("");
