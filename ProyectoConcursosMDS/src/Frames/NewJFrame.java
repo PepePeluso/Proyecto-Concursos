@@ -6,6 +6,10 @@
 package Frames;
 
 import Clases.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.regex.Matcher;
@@ -31,6 +35,13 @@ public class NewJFrame extends javax.swing.JFrame {
     public NewJFrame() {
         initComponents();
         this.setLocationRelativeTo(this);
+         try {
+           ObjectInputStream abrir=new ObjectInputStream(new FileInputStream("C:\\Users\\Diego Castillo\\Pictures\\Proyecto modelos\\Modelo"));
+           empresa= (Empresa)abrir.readObject();
+           abrir.close();
+           login=empresa.getLogin();
+       } catch (Exception e) {
+       }
         TablaEvaluadores();
          String Cabecera2[]={"Nombre","Cedula","Fecha de Nacimiento","Años de Experiencia","Profeccion"};    
         modelo2=new DefaultTableModel(null,Cabecera2);
@@ -40,6 +51,7 @@ public class NewJFrame extends javax.swing.JFrame {
         modelo4=new DefaultTableModel(null,Cabecera4);
         TablaParticipantesEvaluados.setModel(modelo4);
         TablaConcursoEliminamos();
+        
           
     }
     public  void TablaEvaluadores(){
@@ -245,8 +257,6 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         jLabel5.setText("Usuario:");
-
-        txtUsuario.setText("a");
 
         jLabel6.setText("Contraseña");
 
@@ -836,6 +846,11 @@ public class NewJFrame extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jButton1.setText("Registrar Concurso");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -1060,7 +1075,7 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Registrada");
             JOptionPane.showMessageDialog(null, "Este concurso ya fue evaluado");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No ha esxoguido ningun concurso para evaluar");
+            JOptionPane.showMessageDialog(null, "No ha escoguido ningun concurso para evaluar");
         }
         
         
@@ -1190,6 +1205,16 @@ JOptionPane.showMessageDialog(null, "No exite ninguna Empresa Registrada");
         
         if (validar<'0' || validar>'9' || v<0 || v>9) evt.consume(); 
     }//GEN-LAST:event_txtCedulaEvaluadorKeyTyped
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        try {
+             ObjectOutputStream Guardar=new ObjectOutputStream( new FileOutputStream("C:\\Users\\Diego Castillo\\Pictures\\Proyecto modelos\\Modelo"));
+            Guardar.writeObject(empresa);
+           Guardar.close();
+        } catch (Exception e) {
+        }
+       
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
