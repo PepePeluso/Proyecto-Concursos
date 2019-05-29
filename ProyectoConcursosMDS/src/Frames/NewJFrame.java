@@ -261,6 +261,12 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel5.setText("Usuario:");
 
+        txtUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtUsuarioKeyTyped(evt);
+            }
+        });
+
         jLabel6.setText("Contraseña");
 
         jButton5.setText("Registrar");
@@ -1219,6 +1225,11 @@ JOptionPane.showMessageDialog(null, "No existe ninguna Empresa Registrada");
         }
        
     }//GEN-LAST:event_formWindowClosing
+
+    private void txtUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyTyped
+        char validar=evt.getKeyChar();
+        if((!Character.isLetter(validar))&&!Character.isDigit(validar))evt.consume();
+    }//GEN-LAST:event_txtUsuarioKeyTyped
 
     /**
      * @param args the command line arguments
