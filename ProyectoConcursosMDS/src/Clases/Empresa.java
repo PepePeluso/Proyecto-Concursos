@@ -92,27 +92,10 @@ public class Empresa implements Verificacion,Serializable {
    
    
    /** @pdOid 14e5bd20-2cbd-47a1-a19f-f53d69542d9a */
-   public  void guardar() {
-       try {
-            ObjectOutputStream Guardar=new ObjectOutputStream( new FileOutputStream(""));
-            Guardar.writeObject(this);
-           Guardar.close();
-       } catch (Exception e) {
-       }
-    
-   }
+  
    
    /** @pdOid 20b805ff-cc5f-41a1-9577-5957c9516306 */
-   public static Empresa abrir() {
-       try {
-           ObjectInputStream abrir=new ObjectInputStream(new FileInputStream(""));
-            Empresa empresa=(Empresa)abrir.readObject();
-             return empresa;
-       } catch (Exception e) {
-       }
-        
-      return null ;
-   }
+   
 
     @Override
     public boolean verificarDatos() {
